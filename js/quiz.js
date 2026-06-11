@@ -1,0 +1,236 @@
+// QUIZ ENGINE
+
+let state = {
+  screen: 'subject',       // subject | chapter | quiz | result
+  subject: null,
+  chapter: null,
+  questions: [],
+  current: 0,
+  score: 0,
+  answered: false,
+  startTime: null
+};
+
+// ── NAVIGATION ──────────────────────────────────────────────
+
+function goTo(screen) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + screen).classList.add('active');
+  state.screen = screen;
+  window.scrollTo(0, 0);
+}
+
+function goSubjects() {
+  state.subject = null;
+  state.chapter = null;
+  renderSubjects();
+  goTo('subject');
+}
+
+function goChapters() {
+  state.chapter = null;
+  renderChapters(state.subject);
+  goTo('chapter');
+}
+
+// ── SUBJECT SCREEN ──────────────────────────────────────────
+
+function renderSubjects() {
+  const grid = document.getElementById('subject-grid');
+  grid.innerHTML = '';
+  SUBJECTS.forEach(sub => {
+    const card = document.createElement('div');
+    card.className = 'card subject-card';
+    card.style.setProperty('--accent', sub.color);
+    card.style.setProperty('--accent-light', sub.colorLight);
+    card.innerHTML = `
+      <div class="card-icon">${sub.icon}</div>
+      <div class="card-title">${sub.label}</div>
+      <div class="card-meta">${sub.chapters.length} chapter${sub.chapters.length > 1 ? 's' : ''}</div>
+      <div class="card-arrow">→</div>
+    `;
+    card.addEventListener('click', () => selectSubject(sub.id));
+    grid.appendChild(card);
+  });
+}
+
+function selectSubject(subjectId) {
+  state.subject = SUBJECTS.find(s => s.id === subjectId);
+  renderChapters(state.subject);
+  goTo('chapter');
+}
+
+// ── CHAPTER SCREEN ──────────────────────────────────────────
+
+function renderChapters(subject) {
+  document.getElementById('chapter-subject-title').textContent = subject.label;
+  document.getElementById('chapter-subject-icon').textContent = subject.icon;
+
+  const grid = document.getElementById('chapter-grid');
+  grid.innerHTML = '';
+  subject.chapters.forEach(ch => {
+    const card = document.createElement('div');
+    card.className = 'card chapter-card';
+    card.style.setProperty('--accent', subject.color);
+    card.style.setProperty('--accent-light', subject.colorLight);
+    card.innerHTML = `
+      <div class="chapter-number">${subject.icon}</div>
+      <div class="card-title">${ch.label}</div>
+      <div class="card-meta">${getChapterData(ch.dataVar) ? getChapterData(ch.dataVar).questions.length : '?'} questions</div>
+      <div class="card-arrow">→</div>
+    `;
+    card.addEventListener('click', () => selectChapter(ch));
+    grid.appendChild(card);
+  });
+}
+
+function getChapterData(varName) {
+  return window[varName] || null;
+}
+
+function selectChapter(chapter) {
+  const data = getChapterData(chapter.dataVar);
+  if (!data) {
+    alert('Chapter data not found. Make sure all data files are loaded.');
+    return;
+  }
+  state.chapter = chapter;
+  state.questions = shuffle([...data.questions]);
+  state.current = 0;
+  state.score = 0;
+  state.answered = false;
+  state.startTime = Date.now();
+  renderQuestion();
+  goTo('quiz');
+}
+
+// ── QUIZ SCREEN ─────────────────────────────────────────────
+
+function renderQuestion() {
+  state.answered = false;
+  const q = state.questions[state.current];
+  const total = state.questions.length;
+  const pct = Math.round((state.current / total) * 100);
+
+  // breadcrumb
+  document.getElementById('quiz-breadcrumb').innerHTML =
+    `<span class="bc-link" onclick="goSubjects()">Subjects</span>
+     <span class="bc-sep">/</span>
+     <span class="bc-link" onclick="goChapters()">${state.subject.label}</span>
+     <span class="bc-sep">/</span>
+     <span class="bc-current">${state.chapter.label}</span>`;
+
+  // progress
+  document.getElementById('prog-bar').style.width = pct + '%';
+  document.getElementById('prog-text').textContent = `${state.current + 1} / ${total}`;
+
+  // question
+  document.getElementById('q-text').textContent = q.q;
+
+  // options
+  const labels = ['A', 'B', 'C', 'D'];
+  const optsEl = document.getElementById('options');
+  optsEl.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="opt-label">${labels[i]}</span><span class="opt-text">${opt}</span>`;
+    btn.addEventListener('click', () => answer(i));
+    optsEl.appendChild(btn);
+  });
+
+  // hide feedback and next
+  document.getElementById('feedback-box').classList.remove('show', 'correct', 'wrong');
+  document.getElementById('btn-next').style.display = 'none';
+  document.getElementById('score-live').textContent = `Score: ${state.score}`;
+}
+
+function answer(chosen) {
+  if (state.answered) return;
+  state.answered = true;
+
+  const q = state.questions[state.current];
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach(b => b.disabled = true);
+
+  const correct = chosen === q.ans;
+  if (correct) state.score++;
+
+  btns[chosen].classList.add(correct ? 'correct' : 'wrong');
+  if (!correct) btns[q.ans].classList.add('reveal');
+
+  const fb = document.getElementById('feedback-box');
+  fb.className = 'feedback-box show ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong> ${q.exp}`;
+
+  document.getElementById('score-live').textContent = `Score: ${state.score}`;
+
+  const nextBtn = document.getElementById('btn-next');
+  nextBtn.style.display = 'inline-flex';
+  nextBtn.textContent = state.current < state.questions.length - 1 ? 'Next question →' : 'See results →';
+}
+
+function nextQuestion() {
+  state.current++;
+  if (state.current >= state.questions.length) {
+    showResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+// ── RESULT SCREEN ────────────────────────────────────────────
+
+function showResult() {
+  const total = state.questions.length;
+  const pct = Math.round((state.score / total) * 100);
+  const elapsed = Math.round((Date.now() - state.startTime) / 1000);
+  const mins = Math.floor(elapsed / 60);
+  const secs = elapsed % 60;
+  const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
+
+  const grade =
+    pct >= 90 ? { label: 'Excellent!', color: '#0F6E56' } :
+    pct >= 75 ? { label: 'Good work!', color: '#185FA5' } :
+    pct >= 50 ? { label: 'Keep revising', color: '#BA7517' } :
+                { label: 'Needs more practice', color: '#A32D2D' };
+
+  document.getElementById('result-breadcrumb').innerHTML =
+    `<span class="bc-link" onclick="goSubjects()">Subjects</span>
+     <span class="bc-sep">/</span>
+     <span class="bc-link" onclick="goChapters()">${state.subject.label}</span>
+     <span class="bc-sep">/</span>
+     <span class="bc-current">Results</span>`;
+
+  document.getElementById('res-pct').textContent = pct + '%';
+  document.getElementById('res-grade').textContent = grade.label;
+  document.getElementById('res-grade').style.color = grade.color;
+  document.getElementById('res-chapter').textContent = `${state.subject.label} · ${state.chapter.label}`;
+  document.getElementById('res-correct').textContent = state.score;
+  document.getElementById('res-wrong').textContent = total - state.score;
+  document.getElementById('res-total').textContent = total;
+  document.getElementById('res-time').textContent = timeStr;
+
+  goTo('result');
+}
+
+function retryQuiz() {
+  selectChapter(state.chapter);
+}
+
+// ── UTILS ────────────────────────────────────────────────────
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// ── INIT ─────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderSubjects();
+  goTo('subject');
+});
