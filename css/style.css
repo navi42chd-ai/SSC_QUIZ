@@ -297,8 +297,19 @@ body {
 .feedback-box strong { margin-right: 4px; }
 
 /* ── BUTTONS ── */
+.quiz-footer {
+  display: flex;
+  gap: 10px;
+}
+.quiz-footer .btn-prev {
+  flex: 0 0 auto;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.quiz-footer .btn-prev:hover { background: var(--accent-light); opacity: 1; }
 .quiz-footer .btn-next {
-  width: 100%;
+  flex: 1;
   justify-content: center;
 }
 .btn-next, .btn {
