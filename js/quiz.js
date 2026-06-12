@@ -1,14 +1,15 @@
 // QUIZ ENGINE
 
 let state = {
-  screen: 'subject',       // subject | chapter | quiz | result
+  screen: 'subject',
   subject: null,
   chapter: null,
   questions: [],
   current: 0,
   score: 0,
   answered: false,
-  startTime: null
+  startTime: null,
+  history: []   // stores { chosen, correct } per question index
 };
 
 // ── NAVIGATION ──────────────────────────────────────────────
@@ -95,11 +96,12 @@ function selectChapter(chapter) {
     return;
   }
   state.chapter = chapter;
-  state.questions = shuffle([...data.questions]);
+  state.questions = [...data.questions];
   state.current = 0;
   state.score = 0;
   state.answered = false;
   state.startTime = Date.now();
+  state.history = [];
   renderQuestion();
   goTo('quiz');
 }
@@ -107,10 +109,12 @@ function selectChapter(chapter) {
 // ── QUIZ SCREEN ─────────────────────────────────────────────
 
 function renderQuestion() {
-  state.answered = false;
   const q = state.questions[state.current];
   const total = state.questions.length;
   const pct = Math.round((state.current / total) * 100);
+  const hist = state.history[state.current]; // undefined if not yet answered
+
+  state.answered = !!hist;
 
   // breadcrumb
   document.getElementById('quiz-breadcrumb').innerHTML =
@@ -135,14 +139,57 @@ function renderQuestion() {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
     btn.innerHTML = `<span class="opt-label">${labels[i]}</span><span class="opt-text">${opt}</span>`;
-    btn.addEventListener('click', () => answer(i));
+
+    if (hist) {
+      // restore answered state
+      btn.disabled = true;
+      if (i === hist.chosen) btn.classList.add(hist.correct ? 'correct' : 'wrong');
+      if (!hist.correct && i === q.ans) btn.classList.add('reveal');
+    } else {
+      btn.addEventListener('click', () => answer(i));
+    }
     optsEl.appendChild(btn);
   });
 
-  // hide feedback and next
-  document.getElementById('feedback-box').classList.remove('show', 'correct', 'wrong');
-  document.getElementById('btn-next').style.display = 'none';
+  // feedback
+  const fb = document.getElementById('feedback-box');
+  if (hist) {
+    fb.className = 'feedback-box show ' + (hist.correct ? 'correct' : 'wrong');
+    fb.innerHTML = `<strong>${hist.correct ? '✓ Correct!' : '✗ Incorrect'}</strong> ${q.exp}`;
+  } else {
+    fb.className = 'feedback-box';
+    fb.innerHTML = '';
+  }
+
+  // live score
   document.getElementById('score-live').textContent = `Score: ${state.score}`;
+
+  // footer buttons
+  updateFooterButtons();
+}
+
+function updateFooterButtons() {
+  const total = state.questions.length;
+  const hist = state.history[state.current];
+  const isAnswered = !!hist;
+
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+
+  // Previous button: show if not on first question
+  if (state.current > 0) {
+    btnPrev.style.display = 'inline-flex';
+  } else {
+    btnPrev.style.display = 'none';
+  }
+
+  // Next button: show only after answering
+  if (isAnswered) {
+    btnNext.style.display = 'inline-flex';
+    btnNext.textContent = state.current < total - 1 ? 'Next →' : 'See results →';
+  } else {
+    btnNext.style.display = 'none';
+  }
 }
 
 function answer(chosen) {
@@ -156,6 +203,9 @@ function answer(chosen) {
   const correct = chosen === q.ans;
   if (correct) state.score++;
 
+  // save to history
+  state.history[state.current] = { chosen, correct };
+
   btns[chosen].classList.add(correct ? 'correct' : 'wrong');
   if (!correct) btns[q.ans].classList.add('reveal');
 
@@ -165,9 +215,7 @@ function answer(chosen) {
 
   document.getElementById('score-live').textContent = `Score: ${state.score}`;
 
-  const nextBtn = document.getElementById('btn-next');
-  nextBtn.style.display = 'inline-flex';
-  nextBtn.textContent = state.current < state.questions.length - 1 ? 'Next question →' : 'See results →';
+  updateFooterButtons();
 }
 
 function nextQuestion() {
@@ -177,6 +225,12 @@ function nextQuestion() {
   } else {
     renderQuestion();
   }
+}
+
+function prevQuestion() {
+  if (state.current <= 0) return;
+  state.current--;
+  renderQuestion();
 }
 
 // ── RESULT SCREEN ────────────────────────────────────────────
