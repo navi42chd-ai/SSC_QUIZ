@@ -1,4 +1,4 @@
-// QUIZ ENGINE
+// QUIZ ENGINE — Free Navigation, No Scoring
 
 let state = {
   screen: 'subject',
@@ -6,10 +6,8 @@ let state = {
   chapter: null,
   questions: [],
   current: 0,
-  score: 0,
-  answered: false,
-  startTime: null,
-  history: []   // stores { chosen, correct } per question index
+  answered: [],   // array of chosen answer index per question (null if not answered)
+  startTime: null
 };
 
 // ── NAVIGATION ──────────────────────────────────────────────
@@ -70,6 +68,7 @@ function renderChapters(subject) {
   const grid = document.getElementById('chapter-grid');
   grid.innerHTML = '';
   subject.chapters.forEach(ch => {
+    const data = getChapterData(ch.dataVar);
     const card = document.createElement('div');
     card.className = 'card chapter-card';
     card.style.setProperty('--accent', subject.color);
@@ -77,7 +76,7 @@ function renderChapters(subject) {
     card.innerHTML = `
       <div class="chapter-number">${subject.icon}</div>
       <div class="card-title">${ch.label}</div>
-      <div class="card-meta">${getChapterData(ch.dataVar) ? getChapterData(ch.dataVar).questions.length : '?'} questions</div>
+      <div class="card-meta">${data ? data.questions.length : '?'} questions</div>
       <div class="card-arrow">→</div>
     `;
     card.addEventListener('click', () => selectChapter(ch));
@@ -96,12 +95,10 @@ function selectChapter(chapter) {
     return;
   }
   state.chapter = chapter;
-  state.questions = [...data.questions];
+  state.questions = [...data.questions];   // no shuffle — keep order
   state.current = 0;
-  state.score = 0;
-  state.answered = false;
+  state.answered = new Array(state.questions.length).fill(null);
   state.startTime = Date.now();
-  state.history = [];
   renderQuestion();
   goTo('quiz');
 }
@@ -111,10 +108,8 @@ function selectChapter(chapter) {
 function renderQuestion() {
   const q = state.questions[state.current];
   const total = state.questions.length;
-  const pct = Math.round((state.current / total) * 100);
-  const hist = state.history[state.current]; // undefined if not yet answered
-
-  state.answered = !!hist;
+  const idx = state.current;
+  const pct = Math.round(((idx + 1) / total) * 100);
 
   // breadcrumb
   document.getElementById('quiz-breadcrumb').innerHTML =
@@ -126,7 +121,7 @@ function renderQuestion() {
 
   // progress
   document.getElementById('prog-bar').style.width = pct + '%';
-  document.getElementById('prog-text').textContent = `${state.current + 1} / ${total}`;
+  document.getElementById('prog-text').textContent = `${idx + 1} / ${total}`;
 
   // question
   document.getElementById('q-text').textContent = q.q;
@@ -139,105 +134,102 @@ function renderQuestion() {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
     btn.innerHTML = `<span class="opt-label">${labels[i]}</span><span class="opt-text">${opt}</span>`;
-
-    if (hist) {
-      // restore answered state
-      btn.disabled = true;
-      if (i === hist.chosen) btn.classList.add(hist.correct ? 'correct' : 'wrong');
-      if (!hist.correct && i === q.ans) btn.classList.add('reveal');
-    } else {
-      btn.addEventListener('click', () => answer(i));
-    }
+    btn.addEventListener('click', () => answer(i));
     optsEl.appendChild(btn);
   });
 
-  // feedback
-  const fb = document.getElementById('feedback-box');
-  if (hist) {
-    fb.className = 'feedback-box show ' + (hist.correct ? 'correct' : 'wrong');
-    fb.innerHTML = `<strong>${hist.correct ? '✓ Correct!' : '✗ Incorrect'}</strong> ${q.exp}`;
+  // restore previous answer if navigated back
+  const prevAnswer = state.answered[idx];
+  if (prevAnswer !== null) {
+    showAnswer(prevAnswer, q.ans, q.exp);
   } else {
+    // hide feedback
+    const fb = document.getElementById('feedback-box');
     fb.className = 'feedback-box';
     fb.innerHTML = '';
   }
 
-  // live score
-  document.getElementById('score-live').textContent = `Score: ${state.score}`;
-
-  // footer buttons
-  updateFooterButtons();
-}
-
-function updateFooterButtons() {
-  const total = state.questions.length;
-  const hist = state.history[state.current];
-  const isAnswered = !!hist;
-
-  const btnPrev = document.getElementById('btn-prev');
-  const btnNext = document.getElementById('btn-next');
-
-  // Previous button: show if not on first question
-  if (state.current > 0) {
-    btnPrev.style.display = 'inline-flex';
-  } else {
-    btnPrev.style.display = 'none';
-  }
-
-  // Next button: show only after answering
-  if (isAnswered) {
-    btnNext.style.display = 'inline-flex';
-    btnNext.textContent = state.current < total - 1 ? 'Next →' : 'See results →';
-  } else {
-    btnNext.style.display = 'none';
-  }
+  // nav buttons
+  updateNavButtons();
 }
 
 function answer(chosen) {
-  if (state.answered) return;
-  state.answered = true;
-
+  // allow re-answering — just update
   const q = state.questions[state.current];
-  const btns = document.querySelectorAll('.option-btn');
-  btns.forEach(b => b.disabled = true);
-
-  const correct = chosen === q.ans;
-  if (correct) state.score++;
-
-  // save to history
-  state.history[state.current] = { chosen, correct };
-
-  btns[chosen].classList.add(correct ? 'correct' : 'wrong');
-  if (!correct) btns[q.ans].classList.add('reveal');
-
-  const fb = document.getElementById('feedback-box');
-  fb.className = 'feedback-box show ' + (correct ? 'correct' : 'wrong');
-  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong> ${q.exp}`;
-
-  document.getElementById('score-live').textContent = `Score: ${state.score}`;
-
-  updateFooterButtons();
+  state.answered[state.current] = chosen;
+  showAnswer(chosen, q.ans, q.exp);
+  updateNavButtons();
 }
 
-function nextQuestion() {
-  state.current++;
-  if (state.current >= state.questions.length) {
-    showResult();
+function showAnswer(chosen, correct, exp) {
+  const labels = ['A', 'B', 'C', 'D'];
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach(b => {
+    b.disabled = true;
+    b.classList.remove('correct', 'wrong', 'reveal');
+  });
+
+  const isCorrect = chosen === correct;
+  btns[chosen].classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) btns[correct].classList.add('reveal');
+
+  const fb = document.getElementById('feedback-box');
+  fb.className = 'feedback-box show ' + (isCorrect ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</strong> ${exp}`;
+}
+
+function updateNavButtons() {
+  const idx = state.current;
+  const total = state.questions.length;
+  const answered = state.answered[idx] !== null;
+
+  const prevBtn = document.getElementById('btn-prev');
+  const nextBtn = document.getElementById('btn-next');
+  const endBtn  = document.getElementById('btn-end');
+
+  // prev: always show except on first question
+  prevBtn.style.display = idx > 0 ? 'inline-flex' : 'none';
+
+  // next/end: only show after answering
+  if (answered) {
+    if (idx < total - 1) {
+      nextBtn.style.display = 'inline-flex';
+      endBtn.style.display = 'none';
+    } else {
+      nextBtn.style.display = 'none';
+      endBtn.style.display = 'inline-flex';
+    }
   } else {
-    renderQuestion();
+    nextBtn.style.display = 'none';
+    endBtn.style.display = 'none';
   }
 }
 
 function prevQuestion() {
-  if (state.current <= 0) return;
-  state.current--;
-  renderQuestion();
+  if (state.current > 0) {
+    state.current--;
+    renderQuestion();
+  }
+}
+
+function nextQuestion() {
+  if (state.current < state.questions.length - 1) {
+    state.current++;
+    renderQuestion();
+  }
+}
+
+function endQuiz() {
+  showResult();
 }
 
 // ── RESULT SCREEN ────────────────────────────────────────────
 
 function showResult() {
   const total = state.questions.length;
-  const pct = Math.round((state.score / total) * 100);
+  const correct = state.answered.filter((a, i) => a === state.questions[i].ans).length;
+  const attempted = state.answered.filter(a => a !== null).length;
+  const pct = Math.round((correct / total) * 100);
   const elapsed = Math.round((Date.now() - state.startTime) / 1000);
   const mins = Math.floor(elapsed / 60);
   const secs = elapsed % 60;
@@ -260,8 +252,9 @@ function showResult() {
   document.getElementById('res-grade').textContent = grade.label;
   document.getElementById('res-grade').style.color = grade.color;
   document.getElementById('res-chapter').textContent = `${state.subject.label} · ${state.chapter.label}`;
-  document.getElementById('res-correct').textContent = state.score;
-  document.getElementById('res-wrong').textContent = total - state.score;
+  document.getElementById('res-correct').textContent = correct;
+  document.getElementById('res-wrong').textContent = attempted - correct;
+  document.getElementById('res-attempted').textContent = attempted;
   document.getElementById('res-total').textContent = total;
   document.getElementById('res-time').textContent = timeStr;
 
@@ -270,16 +263,6 @@ function showResult() {
 
 function retryQuiz() {
   selectChapter(state.chapter);
-}
-
-// ── UTILS ────────────────────────────────────────────────────
-
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
 }
 
 // ── INIT ─────────────────────────────────────────────────────
