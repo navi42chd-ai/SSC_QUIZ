@@ -96,13 +96,18 @@ body {
   padding: 1.25rem 1.25rem 0.5rem;
 }
 
-/* Bottom: always-visible next button */
+/* Bottom: always-visible nav buttons */
 .quiz-footer {
   flex-shrink: 0;
   padding: 0.75rem 1.25rem;
   border-top: 1px solid var(--border);
   background: var(--bg);
+  display: flex;
+  gap: 8px;
 }
+.quiz-footer .btn-prev { flex-shrink: 0; }
+.quiz-footer .btn-next,
+.quiz-footer .btn-end  { flex: 1; }
 
 /* ── BREADCRUMB ── */
 .breadcrumb {
@@ -297,19 +302,8 @@ body {
 .feedback-box strong { margin-right: 4px; }
 
 /* ── BUTTONS ── */
-.quiz-footer {
-  display: flex;
-  gap: 10px;
-}
-.quiz-footer .btn-prev {
-  flex: 0 0 auto;
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-}
-.quiz-footer .btn-prev:hover { background: var(--accent-light); opacity: 1; }
 .quiz-footer .btn-next {
-  flex: 1;
+  width: 100%;
   justify-content: center;
 }
 .btn-next, .btn {
@@ -360,7 +354,7 @@ body {
 .result-chapter-label { font-size: 13px; color: var(--text-muted); margin-bottom: 1.75rem; }
 .result-stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-bottom: 1.75rem;
 }
@@ -394,7 +388,6 @@ body {
 
   .result-stats { grid-template-columns: repeat(2, 1fr); }
   .result-pct { font-size: 48px; }
-  .result-grade { font-size: 16px; }
   .result-card { padding: 1.5rem 1.25rem 1.5rem; }
 
   /* Result action buttons stack nicely */
