@@ -11,8 +11,13 @@ const SUBJECTS = [
         label: "Indus Valley Civilization",
         file: "data/history/ancient-india.js",
         dataVar: "chapter_ancient_india"
+      },
+      {
+        id: "vedic-india",
+        label: "Vedic India",
+        file: "data/history/vedic-india.js",
+        dataVar: "chapter_vedic_india"
       }
-      // Future chapters: Vedic India, Maurya Empire, Gupta Period, etc.
     ]
   }
 ];
