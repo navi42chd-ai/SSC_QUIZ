@@ -1,6 +1,6 @@
 window.chapter_ancient_india = {
   subject: "History",
-  chapter: "Ancient India — Stone Age & Indus Valley Civilization",
+  chapter: "Indus Valley Civilization",
   questions: [
 
     // ── STONE AGE ──────────────────────────────────────────
