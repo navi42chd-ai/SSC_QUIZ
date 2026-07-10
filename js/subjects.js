@@ -24,7 +24,12 @@ const SUBJECTS = [
         file: "data/ancient-history/ch03-vedic-age.js",
         dataVar: "chapter_vedic_age",
       },
-      
+      {
+        id: "ch04",
+        label: "Ch 4: Buddhism and Jainism",
+        file: "data/ancient-history/ch04-buddhism-jainism.js",
+        dataVar: "chapter_buddhism_jainism",
+      },
     ],
   },
 ];
