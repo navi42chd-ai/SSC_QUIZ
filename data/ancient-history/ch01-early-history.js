@@ -1,6 +1,6 @@
-window.chapter_early_history = {
+window.chapter_ancient_india = {
   subject: "Ancient History",
-  chapter: "Early History: The Stone Age",
+  chapter: "Early History (Prehistoric to Iron Age)",
   questions: [
 
     // ── PREHISTORY BASICS, THREE-AGE SYSTEM & KEY FIGURES ───────────
