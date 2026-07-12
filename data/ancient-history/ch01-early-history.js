@@ -1,773 +1,817 @@
-window.chapter_ancient_india = {
+window.chapter_early_history = {
   subject: "Ancient History",
-  chapter: "Early History (Prehistoric to Iron Age)",
+  chapter: "Early History: The Stone Age",
   questions: [
 
-    // ── CLASSIFICATION OF HISTORY ───────────────────────────
+    // ── PREHISTORY BASICS, THREE-AGE SYSTEM & KEY FIGURES ───────────
 
     {
-      q: "Into how many categories is History broadly classified?",
+      q: "History is generally divided into which three broad time periods?",
+      opts: ["Ancient, Medieval, Modern", "Prehistory, Protohistory, History", "Stone Age, Bronze Age, Iron Age", "BC, AD, CE"],
+      ans: 1,
+      exp: "Prehistory has no written evidence; Protohistory has written evidence that cannot yet be deciphered (e.g. Indus script); History has written evidence that can be read and understood."
+    },
+    {
+      q: "'Prehistory' refers to a period for which:",
+      opts: ["Only oral traditions exist", "No written records/evidence are available", "Written records exist but are undeciphered", "Only archaeological monuments survive"],
+      ans: 1,
+      exp: "Prehistory is the period for which no written evidence is available at all."
+    },
+    {
+      q: "'Protohistory' refers to a period where:",
+      opts: ["No evidence exists at all", "Written evidence exists but has not yet been deciphered", "Only oral history survives", "Full written history is available and understood"],
+      ans: 1,
+      exp: "The Indus Valley Civilization script is the best example — writing exists but remains undeciphered."
+    },
+    {
+      q: "The Indus Valley Civilization (Harappan Civilization) is considered an example of which period?",
+      opts: ["Prehistory", "Protohistory", "History", "Post-history"],
+      ans: 1,
+      exp: "IVC has written evidence (the Indus script) that has not yet been deciphered, making it Protohistoric."
+    },
+    {
+      q: "The Stone Age as a whole falls under which broad category?",
+      opts: ["History", "Protohistory", "Prehistory", "Proto-history and History both"],
+      ans: 2,
+      exp: "The Stone Age has no deciphered/available written evidence, so it falls entirely under Prehistory."
+    },
+    {
+      q: "The Stone Age is classified into how many broad periods?",
       opts: ["Two", "Three", "Four", "Five"],
       ans: 1,
-      exp: "History is broadly classified into three categories: Pre-History, Proto-History, and History."
+      exp: "The Stone Age is divided into Paleolithic (Old Stone Age), Mesolithic (Middle Stone Age), and Neolithic (New Stone Age)."
     },
     {
-      q: "Which period is covered by 'Pre-History'?",
-      opts: ["After writing was invented", "Before writing was invented", "Period when scripts were deciphered", "Period of oral traditions only"],
-      ans: 1,
-      exp: "Pre-history covers the events before writing was invented. The three Stone Ages usually represent this period."
-    },
-    {
-      q: "Which of the following best defines 'Proto-History'?",
-      opts: ["Period before Stone Age", "Period when writing existed but scripts are yet to be deciphered", "Period fully documented by written records", "Period after Iron Age"],
-      ans: 1,
-      exp: "Proto-history refers to a period between prehistory and history when the knowledge of writing was there, but their scripts are yet to be deciphered."
-    },
-    {
-      q: "The Harappan script falls under which historical category?",
-      opts: ["History", "Pre-History", "Proto-History", "Medieval History"],
+      q: "The three-age system (dividing history into Stone Age, Bronze Age, and Iron Age), based on the collection of the Copenhagen Museum, was coined by:",
+      opts: ["Robert Bruce Foote", "Alexander Cunningham", "Christian Jurgensen Thomsen", "Mortimer Wheeler"],
       ans: 2,
-      exp: "The Harappan script has not yet been deciphered, but the civilization is mentioned in the writings of Mesopotamia — making it Proto-History."
+      exp: "Christian Jurgensen Thomsen proposed this three-age classification system."
     },
     {
-      q: "The Vedic civilisation (1500–600 BC) had which type of literary tradition?",
-      opts: ["Written", "Oral", "Pictographic", "Cuneiform"],
-      ans: 1,
-      exp: "The Vedic civilisation from 1500–600 BC had an oral literary tradition, placing it in the Proto-History category."
-    },
-    {
-      q: "Which of the following correctly matches the Stone Age period with its name?",
-      opts: ["Old Stone Age – Neolithic", "Late Stone Age – Palaeolithic", "New Stone Age – Neolithic", "Old Stone Age – Mesolithic"],
-      ans: 2,
-      exp: "Old Stone Age = Palaeolithic, Late Stone Age = Mesolithic, New Stone Age = Neolithic."
-    },
-    {
-      q: "What is the time frame of the Palaeolithic Age in India?",
-      opts: ["10,000–6,000 BCE", "6,000–1,000 BCE", "5,00,000–10,000 BCE", "1,00,000–50,000 BCE"],
-      ans: 2,
-      exp: "The Palaeolithic (Old Stone Age) spans approximately 5,00,000–10,000 BCE in India."
-    },
-    {
-      q: "What is the time frame of the Mesolithic Age in India?",
-      opts: ["5,00,000–10,000 BCE", "10,000–6,000 BCE", "6,000–1,000 BCE", "2,000–500 BCE"],
-      ans: 1,
-      exp: "The Mesolithic (Late Stone Age) spans 10,000–6,000 BCE in India."
-    },
-    {
-      q: "What is the time frame of the Neolithic Age in India?",
-      opts: ["10,000–6,000 BCE", "5,00,000–10,000 BCE", "6,000–1,000 BCE", "3,000–1,000 BCE"],
-      ans: 2,
-      exp: "The Neolithic (New Stone Age) spans 6,000–1,000 BCE in India."
-    },
-
-    // ── PALAEOLITHIC AGE ────────────────────────────────────
-
-    {
-      q: "What does 'Palaeolithic' literally mean?",
-      opts: ["New Stone Age", "Old Stone Age", "Middle Stone Age", "Bronze Age"],
-      ans: 1,
-      exp: "'Palaeolithic' means 'Old Stone Age' and begins with the first use of stone tools."
-    },
-    {
-      q: "The Palaeolithic Age extends from approximately how many million years ago?",
-      opts: ["1.3 million years ago", "2.3 million years ago", "3.3 million years ago", "4.3 million years ago"],
-      ans: 2,
-      exp: "The Palaeolithic Age extends from the earliest known use of stone tools by Hominins 3.3 million years ago to the end of the Ice Age (11,650 BP)."
-    },
-    {
-      q: "Hominins are described as:",
-      opts: ["Direct descendants of Homo Sapiens", "Immediate ancestors of Homo Sapiens", "A species of primates unrelated to humans", "Early form of Neanderthals"],
-      ans: 1,
-      exp: "Hominins are the immediate ancestors of Homo Sapiens."
-    },
-    {
-      q: "Human ancestors are believed to have first evolved in:",
-      opts: ["Asia", "Europe", "Africa", "Australia"],
-      ans: 2,
-      exp: "Human ancestors are likely to have first evolved in Africa and later migrated to different parts of the world."
-    },
-    {
-      q: "Which was the earliest human ancestor species to migrate out of Africa?",
-      opts: ["Homo Sapiens", "Homo Neanderthalensis", "Homo Erectus", "Homo Habilis"],
-      ans: 2,
-      exp: "The earliest human ancestor species to migrate out of Africa was Homo Erectus."
-    },
-    {
-      q: "Palaeolithic people are also called 'Quartzite Men' in India because:",
-      opts: ["They were found near quartz mountains", "They used quartzite for their tools", "Their fossils were found in quartzite deposits", "They wore quartzite ornaments"],
-      ans: 1,
-      exp: "They used unpolished stones like hand axes, cleavers, choppers, blades, burin, and scrapers made of quartzite — hence called 'Quartzite Men'."
-    },
-    {
-      q: "Which of the following is NOT a tool used by Palaeolithic people?",
-      opts: ["Hand axes", "Cleavers", "Sickle", "Choppers"],
-      ans: 2,
-      exp: "Sickle is an agricultural tool used in later periods. Palaeolithic people used hand axes, cleavers, choppers, blades, burin, and scrapers."
-    },
-    {
-      q: "On the basis of stone tools and climate change, the Palaeolithic Age is divided into how many phases?",
-      opts: ["Two", "Three", "Four", "Five"],
-      ans: 1,
-      exp: "The Palaeolithic Age is divided into three phases: Lower, Middle, and Upper Palaeolithic."
-    },
-    {
-      q: "Which phase of Palaeolithic Age is dated to 20,00,000 – 60,000 BP?",
-      opts: ["Upper Palaeolithic", "Middle Palaeolithic", "Lower/Early Palaeolithic", "Proto-Palaeolithic"],
-      ans: 2,
-      exp: "The Lower/Early Palaeolithic Age is dated to 20,00,000 – 60,000 BP."
-    },
-    {
-      q: "Which human species is believed to have lived in India during the Lower Palaeolithic Age?",
-      opts: ["Homo Sapiens", "Homo Neanderthalensis", "Homo Erectus", "Homo Habilis"],
-      ans: 2,
-      exp: "During the Lower/Early Palaeolithic Age, the human ancestor species Homo Erectus is believed to have lived in India."
-    },
-    {
-      q: "The 'Narmada Man' fossil was discovered in which year?",
-      opts: ["1963", "1972", "1982", "1992"],
-      ans: 2,
-      exp: "The Narmada Valley yielded a partial hominid skull cap in a basal conglomerate deposit in 1982."
-    },
-    {
-      q: "Where was the 'Narmada Man' (oldest hominin fossil in India) found?",
-      opts: ["Bhimbetka, Madhya Pradesh", "Hathnora near Hoshangabad, Madhya Pradesh", "Pallavaram, near Chennai", "Hunsgi Valley, Karnataka"],
-      ans: 1,
-      exp: "The Narmada Man was found at Hathnora near Hoshangabad in Madhya Pradesh."
-    },
-    {
-      q: "What is the significance of the 'Narmada Man' fossil?",
-      opts: ["First evidence of agriculture in India", "Oldest hominin fossil found in India", "First evidence of fire use in India", "Oldest pottery found in India"],
-      ans: 1,
-      exp: "The Narmada Man is the oldest hominin fossil found in India, providing direct evidence of the presence of early human ancestors on the subcontinent."
-    },
-    {
-      q: "Which is one of the earliest known Palaeolithic sites in the Indian subcontinent?",
-      opts: ["Belan Valley, UP", "Bhimbetka, MP", "River Soan Valley, Punjab (now Pakistan)", "Hunsgi Valley, Karnataka"],
-      ans: 2,
-      exp: "River Soan Valley (Punjab, now in Pakistan) is one of the earliest known Paleolithic sites in the Indian subcontinent."
-    },
-    {
-      q: "Bhimbetka (Madhya Pradesh) is significant because:",
-      opts: ["It is the oldest city in India", "It is a UNESCO World Heritage Site with Palaeolithic, Mesolithic, and Neolithic evidence", "It produced the first metal tools in India", "It is where rice cultivation was first found"],
-      ans: 1,
-      exp: "Bhimbetka is a UNESCO World Heritage Site with rock shelters showing Paleolithic, Mesolithic, and Neolithic evidence."
-    },
-    {
-      q: "Animal fossils of 'Elephas namadicus' were recovered from which region?",
-      opts: ["Godavari Valley", "Narmada Valley", "Indus Valley", "Ganga Valley"],
-      ans: 1,
-      exp: "In the Narmada valley, animal fossils of Elephas namadicus (giant tusked pre-historic elephant), Stegodon Ganesa, Bos namadicus, and Equus Namadicus were recovered."
-    },
-    {
-      q: "At which site were 17 animal hoof prints, teeth of Equus, evidence of Water Buffalo and Nilgai found?",
-      opts: ["Bhimbetka", "Hunsgi Valley", "Attirampakkam", "Kurnool Caves"],
-      ans: 2,
-      exp: "At Attirampakkam, teeth of Equus, evidence of Water Buffalo and Nilgai, as well as 17 animal hoof prints have been uncovered."
-    },
-    {
-      q: "The first Palaeolithic tools in India were identified at which site and by whom?",
-      opts: ["Bhimbetka, by H.D. Sankalia", "Pallavaram near Chennai, by Robert Bruce Foote in 1863", "Narmada Valley, by Sir John Marshall", "Hunsgi Valley, by A.P. Khatri"],
-      ans: 1,
-      exp: "The first Palaeolithic tools were identified at the site of Pallavaram near Chennai by Robert Bruce Foote in 1863."
-    },
-    {
-      q: "Homo Erectus is believed to have lived near river valleys in caves and rock shelters, as evidenced at:",
-      opts: ["Bhimbetka in MP and Gudiyam near Chennai", "Mehrgarh and Harappa", "Mohenjo-daro and Lothal", "Attirampakkam and Nagarjunakonda"],
+      q: "Who is considered the 'Father of Indian Prehistory'?",
+      opts: ["Robert Bruce Foote", "Alexander Cunningham", "H.D. Sankalia", "V.S. Wakankar"],
       ans: 0,
-      exp: "Homo Erectus lived near the river valleys in caves and rock shelters, as seen from evidence in Bhimbetka in Madhya Pradesh and Gudiyam near Chennai."
+      exp: "Robert Bruce Foote is regarded as the Father of Indian Prehistory; this is a frequently asked question in state PCS exams."
     },
     {
-      q: "Which of the following correctly describes Acheulian Culture tools?",
-      opts: ["Choppers and chopping tools", "Mainly hand axes and cleavers", "Microlithic blades and polished axes", "Bone tools and faunal remains"],
+      q: "Who is considered the 'Father of Indian Archaeology'?",
+      opts: ["Robert Bruce Foote", "Alexander Cunningham", "John Marshall", "Charles Masson"],
       ans: 1,
-      exp: "Acheulian Culture is characterised by hand axes and cleavers. Sohanian Culture used choppers and chopping tools."
+      exp: "Alexander Cunningham established the Archaeological Survey of India in 1861 and is regarded as the Father of Indian Archaeology."
     },
     {
-      q: "Sohanian Culture is named after which river valley?",
-      opts: ["Sohan river valley in Pakistan", "Soan river in Bihar", "Son river in UP", "Sindhu river in Rajasthan"],
+      q: "The National Museum of Mankind, also called the 'Museum of Man and Culture' (Indira Gandhi Rashtriya Manav Sangrahalaya), is located at:",
+      opts: ["Bhopal, Madhya Pradesh", "Lucknow, Uttar Pradesh", "Patna, Bihar", "Jaipur, Rajasthan"],
       ans: 0,
-      exp: "Sohanian Culture is confined to the northwestern part of India and is named after the Sohan river valley in Pakistan."
-    },
-    {
-      q: "Acheulian Culture in India is absent in which regions?",
-      opts: ["Central and South-Eastern India", "Western Ghats, coastal, and North-Eastern India", "Deccan Plateau and Karnataka", "Bihar and West Bengal"],
-      ans: 1,
-      exp: "Acheulian Culture is absent in Western Ghats, coastal, and North-Eastern India due to heavy rainfall."
-    },
-    {
-      q: "The Middle Palaeolithic Age in India was first identified by H.D. Sankalia at which site?",
-      opts: ["Bhimbetka, MP", "Nevasa on the Pravara River, Ahmadnagar, Maharashtra", "Kurnool Caves, Andhra Pradesh", "Baghor, Uttar Pradesh"],
-      ans: 1,
-      exp: "In India, the Middle Palaeolithic phase was first identified by H.D. Sankalia on the Pravara River at Nevasa (Ahmadnagar, Maharashtra)."
-    },
-    {
-      q: "While the African Middle Stone Age is associated with Homo Sapiens, it is associated with which species in Europe?",
-      opts: ["Homo Erectus", "Homo Habilis", "Neanderthals", "Hominins"],
-      ans: 2,
-      exp: "While the African Middle Stone Age is associated with Homo Sapiens, it is associated with the Neanderthals in Europe."
-    },
-    {
-      q: "Neanderthals lived in Eurasia from approximately:",
-      opts: ["4,00,000 to 40,000 years ago", "2,00,000 to 10,000 years ago", "1,00,000 to 50,000 years ago", "8,00,000 to 1,00,000 years ago"],
-      ans: 0,
-      exp: "Neanderthals lived in Eurasia from approximately 400,000 to 40,000 years ago. They were a species of archaic humans closely related to modern humans."
-    },
-    {
-      q: "Which minerals were used to make tools in the Middle Palaeolithic Age?",
-      opts: ["Quartzite and granite", "Chert, jasper, chalcedony, and quartz", "Limestone and sandstone", "Copper and bronze"],
-      ans: 1,
-      exp: "Chert, jasper, chalcedony, and quartz were used to make tools during the Middle Palaeolithic Age."
-    },
-    {
-      q: "Modern humans (Homo Sapiens) evolved in Africa approximately:",
-      opts: ["1,00,000 years ago", "2,00,000 years ago", "3,00,000 years ago", "5,00,000 years ago"],
-      ans: 2,
-      exp: "Modern humans evolved in Africa around 300,000 years ago and migrated to Asia by 60,000 years ago."
-    },
-    {
-      q: "Which of the following is a site of the Upper Palaeolithic Age in Karnataka?",
-      opts: ["Bhimbetka", "Patne", "Meralbhavi", "Godavarikhani"],
-      ans: 2,
-      exp: "Meralbhavi is an Upper Palaeolithic Age site in Karnataka. Bhimbetka is in MP, Patne in Maharashtra, and Godavarikhani in Telangana."
-    },
-    {
-      q: "Ostrich egg shells found at Bhimbetka and Patne (Maharashtra) have been dated to:",
-      opts: ["10,000 years before present", "15,000 years before present", "25,000 years before present", "35,000 years before present"],
-      ans: 2,
-      exp: "Ostrich egg shells from the Upper Palaeolithic sites of Bhimbetka and Patne (Jalgaon, Maharashtra) have been dated to 25,000 years before the present."
-    },
-    {
-      q: "Some of the Green colour paintings of Bhimbetka date to which period?",
-      opts: ["Neolithic", "Mesolithic", "Upper Palaeolithic", "Chalcolithic"],
-      ans: 2,
-      exp: "Some of the Green colour paintings of Bhimbetka date to the Upper Palaeolithic period."
-    },
-    {
-      q: "Incised ostrich eggshell, shell and stone beads of the Upper Palaeolithic period have been found at Jwalapuram in:",
-      opts: ["Maharashtra", "Karnataka", "Andhra Pradesh", "Telangana"],
-      ans: 2,
-      exp: "Incised ostrich eggshell, shell and stone beads have been found at Jwalapuram in Andhra Pradesh, and Patne in Maharashtra."
-    },
-    {
-      q: "Where is the earliest known evidence of a shrine in India found?",
-      opts: ["Bhimbetka, Madhya Pradesh", "Baghor, Uttar Pradesh", "Kurnool Caves, Andhra Pradesh", "Mehrgarh, Pakistan"],
-      ans: 1,
-      exp: "A shrine-like structure found at Baghor, Uttar Pradesh is the earliest known evidence of a shrine in India. It is indicated by a block of sandstone surrounded by a rubble circle."
-    },
-    {
-      q: "Bone tools and faunal remains have been found in which Upper Palaeolithic site?",
-      opts: ["Bhimbetka, MP", "Patne, Maharashtra", "Kurnool Caves, Andhra Pradesh", "Baghor I, Son Valley"],
-      ans: 2,
-      exp: "Bone tools and faunal remains have been found in Kurnool caves in Andhra Pradesh."
-    },
-    {
-      q: "What are Microliths?",
-      opts: ["Large polished stone tools", "Tiny stone tools made of silica-rich materials", "Bone tools used for hunting", "Copper tools used in Chalcolithic period"],
-      ans: 1,
-      exp: "Microliths are tiny stone tools introduced in the Upper Palaeolithic Age, made using different varieties of silica-rich raw materials."
+      exp: "It is located in Bhopal, Madhya Pradesh."
     },
 
-    // ── MESOLITHIC AGE ──────────────────────────────────────
+    // ── HUMAN EVOLUTION ─────────────────────────────────────────────
 
     {
-      q: "The Mesolithic Age in India is believed to have started around:",
-      opts: ["Beginning of the Bronze Age", "End of the last Ice Age", "Beginning of agriculture", "Advent of the Neolithic culture"],
-      ans: 1,
-      exp: "The Mesolithic Age in India is believed to have started around the end of the last Ice Age and continued till the inception of the Neolithic Age."
-    },
-    {
-      q: "In the Levant (Eastern Mediterranean), the Mesolithic culture is dated between:",
-      opts: ["30,000 and 15,000 BC", "20,000 and 9,500 BC", "10,000 and 5,000 BC", "5,000 and 2,000 BC"],
-      ans: 1,
-      exp: "In the Levant (Eastern Mediterranean), the Mesolithic culture is dated between 20,000 and 9,500 BC."
-    },
-    {
-      q: "After the Ice Age, with the advent of global warming, Mesolithic human groups:",
-      opts: ["Settled permanently near rivers", "Became highly mobile and began to occupy various ecozones", "Stopped hunting and took up agriculture", "Migrated back to Africa"],
-      ans: 1,
-      exp: "After the Ice Age, with the advent of global warming, human groups became highly mobile and began to occupy various ecozones."
-    },
-    {
-      q: "Freshwater lakes were known to exist during the Mesolithic period at:",
-      opts: ["Langhnaj in Gujarat", "Didwana in western Rajasthan", "Adamgarh in Madhya Pradesh", "Paisra in Bihar"],
-      ans: 1,
-      exp: "Freshwater lakes were known to exist at Didwana in western Rajasthan during the Mesolithic period."
-    },
-    {
-      q: "Which of the following is a Mesolithic site in Gujarat?",
-      opts: ["Paisra", "Langhnaj", "Sarai Nahar Rai", "Sankanakallu"],
-      ans: 1,
-      exp: "Langhnaj in Gujarat is an important Mesolithic site. Other sites include Paisra (Bihar), Baghor II, Chopani Mando, Sarai Nahar Rai, Mahadaha, Damdama (all in UP)."
-    },
-    {
-      q: "Which is the largest Microlithic site in India?",
-      opts: ["Bhimbetka", "Adamgarh", "Bagor", "Langhnaj"],
-      ans: 2,
-      exp: "Bagor (Rajasthan) is the largest Microlithic site in India, as marked on the Mesolithic sites map."
-    },
-    {
-      q: "Teri sites (coastal landscape caused by sand dunes) are found in which state?",
-      opts: ["Gujarat", "Maharashtra", "Tamil Nadu", "Kerala"],
-      ans: 2,
-      exp: "Teri sites of Thoothukudy in Tamil Nadu are coastal Mesolithic sites — a coastal landscape caused by sand dunes."
-    },
-    {
-      q: "Domestic animal bones found at Kanewal, Loteshwar and Ratanpur (Gujarat) and Adamgarh (MP) are evidence of:",
-      opts: ["Early agriculture", "Animal domestication in Mesolithic period", "Ritual sacrifices", "Iron Age settlements"],
-      ans: 1,
-      exp: "Domestic animal bones of cattle, sheep, goats, pig and dog have been found at Kanewal, Loteshwar, Ratanpur in Gujarat and Adamgarh and Bhimbetka in MP — evidence of animal domestication during the Mesolithic period."
-    },
-    {
-      q: "Camel bones have been found from which Mesolithic site?",
-      opts: ["Langhnaj", "Paisra", "Kanewal", "Damdama"],
-      ans: 2,
-      exp: "Camel bones have been found from Kanewal (Gujarat)."
-    },
-    {
-      q: "Traces of oval and circular huts are found at Chopani Mando and Damdama in UP, and at Bagor and Tilwara in:",
-      opts: ["Gujarat", "Rajasthan", "Madhya Pradesh", "Karnataka"],
-      ans: 1,
-      exp: "Traces of oval and circular huts and possible wattle daub are found in Chopani Mando and Damdama in Uttar Pradesh and Bagor and Tilwara in Rajasthan."
-    },
-    {
-      q: "Characteristic tools of the Mesolithic Age are:",
-      opts: ["Polished stone axes", "Microlithic tools", "Hand axes and cleavers", "Copper tools"],
-      ans: 1,
-      exp: "Mesolithic people used microlithic tools to suit the changes in flora and fauna. These tools enabled them to hunt smaller animals and birds."
-    },
-    {
-      q: "A chert stone with geometric engravings was found at:",
-      opts: ["Bhimbetka", "South Mirzapur", "Chandravati in Rajasthan", "Pachmarhi"],
-      ans: 2,
-      exp: "A chert stone with geometric engravings was found in Chandravati in Rajasthan; bone objects and human tooth engraved with geometric design were found from Bhimbetka."
-    },
-    {
-      q: "Rock paintings at Bhimbetka show that for hunting animals:",
-      opts: ["Only men went hunting", "Only women went hunting", "Men and women went together", "Children also participated"],
-      ans: 2,
-      exp: "Bhimbetka paintings show that various animals were hunted and for this men and women went together."
-    },
-    {
-      q: "Human skeletons of the Mesolithic period have been found at Mahadaha, Damdama, and Sarai Nahar Rai in:",
-      opts: ["Rajasthan", "Madhya Pradesh", "Uttar Pradesh", "Bihar"],
-      ans: 2,
-      exp: "Human skeletons have been found in Mahadaha, Damdama, and Sarai Nahar Rai in Uttar Pradesh."
-    },
-    {
-      q: "At which Mesolithic site was a man and a woman buried together?",
-      opts: ["Damdama", "Sarai Nahar Rai", "Mahadaha", "Lekhakia"],
-      ans: 2,
-      exp: "At Mahadaha, a man and a woman were buried together — an unusual burial practice."
-    },
-    {
-      q: "Which grave good was found in a Mesolithic burial?",
-      opts: ["Gold ring", "Copper bangle", "Ivory pendant", "Iron arrowhead"],
-      ans: 2,
-      exp: "Mesolithic people buried the dead along with grave goods. One burial had an ivory pendant as the grave good."
-    },
-
-    // ── NEOLITHIC AGE ───────────────────────────────────────
-
-    {
-      q: "The Neolithic Age (New Stone Age) is characterised by the beginning of:",
-      opts: ["Use of iron tools", "Pottery and urban settlements", "Agriculture and animal domestication", "Long-distance sea trade"],
-      ans: 2,
-      exp: "The Neolithic period started around 10,000 BC and marked the beginning of agriculture and animal domestication."
-    },
-    {
-      q: "Characteristic tools of the Neolithic Age are:",
-      opts: ["Hand axes and cleavers", "Polished stone, stone axes, microlith blades", "Copper flat axes and bangles", "Bone tools and microliths"],
-      ans: 1,
-      exp: "Neolithic characteristic tools are polished stone, stone axes, and microlith blades."
-    },
-    {
-      q: "Which of the following is a Neolithic site in Northwest India, now situated in Pakistan?",
-      opts: ["Burzahom", "Mehrgarh", "Lehuradeva", "Chirand"],
-      ans: 1,
-      exp: "Neolithic sites in Northwest India — Mehrgarh, Rana Ghundai, Sarai Kala, and Jalilpur — are now situated in Pakistan."
-    },
-    {
-      q: "Mehrgarh has produced evidence of early Neolithic times dating to:",
-      opts: ["10,000 BC", "7,000 BC", "5,500 BC", "3,500 BC"],
-      ans: 1,
-      exp: "Mehrgarh has produced evidence of early Neolithic times, dating to 7000 BC. Wheat and Barley were cultivated and sheep, goat and cattle were domesticated."
-    },
-    {
-      q: "The 1st cultural phase of Mehrgarh (7000–5500 BC) did NOT use:",
-      opts: ["Crops", "Domesticated animals", "Pottery", "Sea shell ornaments"],
-      ans: 2,
-      exp: "The 1st cultural phase (7000-5500 BC) of Mehrgarh: cultivated crops and domesticated animals, but did NOT use pottery."
-    },
-    {
-      q: "Which crop cultivated at Mehrgarh (1st phase) suggests contact with Central Asia?",
-      opts: ["Wheat", "Barley", "Lentil", "Rice"],
-      ans: 2,
-      exp: "The use of lentil at Burzahom (Kashmir) and Mehrgarh suggests they had contacts with Central Asia, as lentil is associated with that region."
-    },
-    {
-      q: "Long-distance trade at Mehrgarh (2nd and 3rd cultural phases) is revealed by the presence of:",
-      opts: ["Gold ornaments", "Lapis Lazuli (available only in Badakshan)", "Iron tools", "Ivory pendants"],
-      ans: 1,
-      exp: "They practised long-distance trade, revealed by Lapis Lazuli which is available only in Badakshan."
-    },
-    {
-      q: "The earliest evidence for drilling a human tooth (early dentistry) has been found at:",
-      opts: ["Bhimbetka", "Burzahom", "Mehrgarh", "Chirand"],
-      ans: 2,
-      exp: "The earliest evidence for drilling human tooth (of a living person) has been found at Mehrgarh — seen as a prelude to dentistry."
-    },
-    {
-      q: "Burzahom, an important Neolithic site, is located in:",
-      opts: ["Kashmir Valley", "Garo Hills", "Bihar", "Karnataka"],
-      ans: 0,
-      exp: "Burzahom is an important Neolithic site in the Valley of Kashmir."
-    },
-    {
-      q: "At Burzahom (Kashmir), people lived in pit dwellings primarily because:",
-      opts: ["To store grain", "To escape floods", "To escape the cold weather", "For protection from animals"],
-      ans: 2,
-      exp: "At Burzahom, people lived in pit dwellings to escape the cold weather. The houses were oval in shape, wide at the bottom and narrow at the top."
-    },
-    {
-      q: "What are 'menhirs'?",
-      opts: ["Pit dwellings", "Standing stones", "Burial urns", "Ancient pottery wheels"],
-      ans: 1,
-      exp: "Menhirs are standing stones. Evidence of menhirs was found at Burzahom along with redware pottery and metal objects like copper arrowheads."
-    },
-    {
-      q: "The Neolithic culture at Burzahom had two phases: aceramic and ceramic. What does 'aceramic' mean?",
-      opts: ["Pottery with no decoration", "No evidence of ceramics/pottery", "Black and red pottery", "Hand-made pottery only"],
-      ans: 1,
-      exp: "Aceramic phase did not have evidence of ceramics. The ceramic phase shows evidence of pottery."
-    },
-    {
-      q: "A burial site at Burzahom produced wild dog bone and antler horn with an engraving depicting a:",
-      opts: ["Farming scene", "Hunting scene with dog and sun", "Dance scene", "Battle scene"],
-      ans: 1,
-      exp: "A burial site at Burzahom produced wild dog bone and antler horn. An engraving of a hunting scene with dog and sun is depicted on a stone."
-    },
-    {
-      q: "The site of Lehuradeva (Uttar Pradesh) has produced early evidence of rice cultivation dated to:",
-      opts: ["10,000 BC", "8,000 BC", "6,500 BC", "4,500 BC"],
-      ans: 2,
-      exp: "The site of Lehuradeva (Uttar Pradesh) has produced early evidence of rice cultivation dated to 6500 BC."
-    },
-    {
-      q: "Neolithic sites in the Ganges Valley are characterised by which type of pottery?",
-      opts: ["Black-and-red ware", "Painted grey ware", "Cord-marked pottery", "Ochre coloured pottery"],
-      ans: 2,
-      exp: "Neolithic Ganges Valley sites (Lehuradeva, Chopani Munda, Koldiwa, Mahagara in UP; Chirand and Senuwar in Bihar) are characterised by cord-marked pottery."
-    },
-    {
-      q: "Neolithic South Indian sites have 'ash mounds' in the centre. Which sites in Karnataka feature ash mound sites?",
-      opts: ["Burzahom, Chirand, Kuchai", "Kodekal, Kupgal and Budihal", "Sanganakallu, Tekkalakota, Brahmagiri", "Daojali Hading, Sarutaru"],
-      ans: 1,
-      exp: "Utnur and Palvoy in Andhra Pradesh and Kodekal, Kupgal and Budihal in Karnataka feature ash mound sites."
-    },
-    {
-      q: "Which is the major Neolithic site in Tamil Nadu?",
-      opts: ["Hallur", "Brahmagiri", "Paiyyampalli", "Utnur"],
-      ans: 2,
-      exp: "Paiyyampalli is the major Neolithic site in Tamil Nadu. Hallur, Brahmagiri are in Karnataka; Utnur is in Andhra Pradesh."
-    },
-    {
-      q: "In North East India (Assam and Garo Hills), the Neolithic culture dates from:",
-      opts: ["5,000–3,000 BC", "3,500–2,000 BC", "2,500–1,500 BC", "1,500–500 BC"],
-      ans: 2,
-      exp: "The Neolithic culture in North East India dates from 2500–1500 BC. Tools like shouldered axes and splayed celts were found."
-    },
-    {
-      q: "Daojali Hading and Sarutaru are important Neolithic sites bearing evidence for:",
-      opts: ["Urn burials", "Shifting cultivation", "Long-distance sea trade", "Early dentistry"],
-      ans: 1,
-      exp: "Daojali Hading and Sarutaru are important sites bearing evidence for shifting cultivation in North East India."
-    },
-    {
-      q: "On the northern spurs of the Vindhyas in the Belan Valley, which unique sequence of phases has been found?",
-      opts: ["Only Neolithic and Chalcolithic", "All three phases of Palaeolithic, Mesolithic, and Neolithic in sequence", "Only Mesolithic and Neolithic", "Chalcolithic and Iron Age"],
-      ans: 1,
-      exp: "On the northern spurs of the Vindhyas in the Belan Valley, all three phases of the Palaeolithic, followed by the Mesolithic and Neolithic phases, have been found in sequence."
-    },
-    {
-      q: "Agricultural produce in later Neolithic South India includes:",
-      opts: ["Wheat and barley", "Rice and lentil", "Ragi and horse gram (kulathi)", "Cotton and sesame"],
-      ans: 2,
-      exp: "Agricultural produce in South India's later Neolithic phase includes Ragi and horse gram (kulathi). They lived in circular or rectangular houses made of mud and reed."
-    },
-
-    // ── CHALCOLITHIC PERIOD ─────────────────────────────────
-
-    {
-      q: "The Chalcolithic period is characterised by:",
-      opts: ["Use of iron alone", "Use of only copper tools", "Combined use of stone and copper tools", "Use of bronze tools"],
-      ans: 2,
-      exp: "The Chalcolithic period witnessed the combined use of stone and copper tools. The first metal used was copper."
-    },
-    {
-      q: "The Chalcolithic period in India is dated approximately to:",
-      opts: ["4,000–2,000 BC", "2,600–1,200 BC", "1,100–800 BC", "800–200 BC"],
-      ans: 1,
-      exp: "The Chalcolithic period in India is approximately dated to 2600–1200 BC."
-    },
-    {
-      q: "The Pre-Harappan cultures are the earliest Chalcolithic cultures of India. Which statement about them is correct?",
-      opts: ["They arose only after the Harappan civilization ended", "They were found before the mature Harappan phase and continued even after its decline", "They were urban civilizations", "They used iron tools exclusively"],
-      ans: 1,
-      exp: "The Pre-Harappan cultures are the earliest Chalcolithic cultures of India, found before the mature Harappan phase and continuing to exist even after the decline of Harappan civilization."
-    },
-    {
-      q: "Chalcolithic culture traces are found all over India except:",
-      opts: ["Mountain regions and plateaus", "River valley regions", "Alluvial plains and thickly forested areas", "Coastal areas"],
-      ans: 2,
-      exp: "Chalcolithic culture traces are found all over the country, except for the alluvial plains and thickly forested areas."
-    },
-    {
-      q: "Which Chalcolithic site in Rajasthan supplied copper to Harappa?",
-      opts: ["Ahar", "Gilund", "Ganeshwar", "Balathal"],
-      ans: 2,
-      exp: "Ganeshwar (Rajasthan) is noted for its copper supply to Harappa — a fact highlighted in UPSC 2021."
-    },
-    {
-      q: "Ahar (Rajasthan) Chalcolithic site is distinctive for the absence of:",
-      opts: ["Pottery", "Copper tools", "Stone axes or blades", "Agriculture"],
-      ans: 2,
-      exp: "Ahar (Rajasthan) is notable for the Absence of stone axes or blades, while nearby Gilund had a stone-blade industry."
-    },
-    {
-      q: "Which Chalcolithic site in Western Maharashtra showed evidence of copper chisels (UPSC 2024)?",
-      opts: ["Jorwe", "Nevasa", "Daimabad", "Chandoli"],
+      q: "Which of the following early hominid/human species lived during the Paleolithic period?",
+      opts: ["Only Homo sapiens", "Only Australopithecus", "Only Homo erectus", "Australopithecus, Homo habilis, Homo erectus, and Neanderthals (all of the above)"],
       ans: 3,
-      exp: "Chandoli (Western Maharashtra) showed evidence of copper chisels — as highlighted in UPSC 2024."
+      exp: "All of these early hominid species existed at various stages during the Paleolithic period, before modern Homo sapiens sapiens."
     },
     {
-      q: "Jorwe (Maharashtra) Chalcolithic site is known for:",
-      opts: ["Stone circle burials", "Flat and rectangular copper axes", "Evidence of iron tools", "Pottery with black-and-white design"],
+      q: "The modern form of human beings is known as:",
+      opts: ["Homo erectus", "Homo habilis", "Homo sapiens sapiens", "Australopithecus"],
+      ans: 2,
+      exp: "Homo sapiens sapiens is the modern human form."
+    },
+    {
+      q: "According to the generally accepted sequence of human evolution, which was the ape-like ancestor that appeared first?",
+      opts: ["Homo erectus", "Ramapithecus", "Neanderthal", "Homo sapiens"],
       ans: 1,
-      exp: "Jorwe is known for flat and rectangular copper axes. It is located near the Pravara River in Maharashtra."
+      exp: "Ramapithecus is considered the earliest ape-like form, from which Australopithecus later branched out."
     },
     {
-      q: "The 'Ochre Coloured Pottery Ware' culture (2600–1200 BC) is found in which region?",
-      opts: ["Deccan Plateau", "Northern India in the Indo-Gangetic plain", "South India river valleys", "North East India"],
+      q: "Which early hominid got its name because it began to walk upright, with a straightened spine ('erect')?",
+      opts: ["Homo habilis", "Homo erectus", "Australopithecus", "Neanderthal"],
       ans: 1,
-      exp: "Ochre Coloured Pottery Ware culture is found in northern India in the Indo-Gangetic plain dating to the Chalcolithic period."
+      exp: "'Erectus' refers to the upright/erect posture and straightened spine of this species."
     },
     {
-      q: "The Ochre Coloured Pottery Ware culture is also known as 'copper hoard culture' because:",
-      opts: ["People hoarded copper coins", "The sites produced copper figures and objects", "Copper was worshipped", "Copper was the only trade item"],
+      q: "Which early human type is associated with the development of vocal ability, teamwork, and leadership/division of labour?",
+      opts: ["Australopithecus", "Homo erectus", "Neanderthal", "Homo habilis"],
+      ans: 2,
+      exp: "Neanderthals are associated with development of speech, teamwork, and social organisation, per this lecture's account."
+    },
+    {
+      q: "Which of the following is considered (in these exam notes) to be the direct ancestor of modern man?",
+      opts: ["Homo sapiens", "Australopithecus", "Homo erectus", "Ramapithecus"],
       ans: 1,
-      exp: "The Ochre Coloured Pottery Ware sites produced copper figures and objects, hence also known as 'copper hoard culture'."
+      exp: "According to this source, Australopithecus is considered the 'ancestor' from which the line eventually led to modern Homo sapiens."
     },
+
+    // ── PALEOLITHIC AGE (OLD STONE AGE) ─────────────────────────────
+
     {
-      q: "Chalcolithic pottery is mainly:",
-      opts: ["Ochre coloured, hand-made", "Painted Grey Ware", "Black-and-red ware, wheel-based, painted with white linear designs", "Northern Black Polished Ware"],
+      q: "The Paleolithic Age is also known as:",
+      opts: ["New Stone Age", "Middle Stone Age", "Old Stone Age", "Copper-Stone Age"],
       ans: 2,
-      exp: "Chalcolithic pottery is mainly black-and-red ware, wheel-based, and painted with white linear designs."
+      exp: "'Paleo' is a Greek word meaning 'old' or 'ancient', and 'lithic' means 'stone' — hence Old Stone Age."
     },
     {
-      q: "Channel-spouted pots and dishes-on-stand were produced by people living in:",
-      opts: ["Bihar and West Bengal", "Rajasthan and Gujarat", "Madhya Pradesh and Maharashtra", "Tamil Nadu and Karnataka"],
+      q: "The word 'Paleolithic' is derived from which language, and what does 'paleo' mean in it?",
+      opts: ["Latin; 'new'", "Greek; 'old/ancient'", "Sanskrit; 'stone'", "Greek; 'middle'"],
+      ans: 1,
+      exp: "'Paleolithic' comes from Greek, where 'paleo' means old/ancient and 'lithic' means stone."
+    },
+    {
+      q: "What was the primary mode of subsistence during the Paleolithic Age?",
+      opts: ["Settled agriculture", "Hunting and gathering", "Pottery making and trade", "Metal working"],
+      ans: 1,
+      exp: "With no tools for farming or metal-working yet developed, people survived purely by hunting wild animals and gathering plants."
+    },
+    {
+      q: "Where did the people of the Paleolithic Age typically live?",
+      opts: ["Permanent brick houses", "Cities with planned streets", "Caves and rock shelters", "Multi-storey buildings"],
       ans: 2,
-      exp: "People living in Madhya Pradesh and Maharashtra produced channel-spouted pots, dishes-on-stand and bowls-on-stand."
+      exp: "They lived in caves and rock shelters, often as nomads moving in search of food."
     },
     {
-      q: "In Chalcolithic settlements, which grain was cultivated in the black soil of Deccan India?",
-      opts: ["Rice", "Wheat", "Cotton", "Barley"],
+      q: "The lifestyle of Paleolithic people is best described as:",
+      opts: ["Settled and agricultural", "Nomadic, moving in search of food", "Urban and trade-based", "Fixed in permanent villages"],
+      ans: 1,
+      exp: "Paleolithic people were nomadic, moving from place to place in search of food and water."
+    },
+    {
+      q: "The Paleolithic Age is further sub-divided into:",
+      opts: ["Early and Late Paleolithic only", "Lower, Middle, and Upper Paleolithic", "First and Second Paleolithic", "Northern and Southern Paleolithic"],
+      ans: 1,
+      exp: "The Paleolithic period is classified into Lower Paleolithic, Middle Paleolithic, and Upper Paleolithic."
+    },
+    {
+      q: "Roughly what time period does the Paleolithic Age cover?",
+      opts: ["10,000 BCE to 8,000 BCE", "2.5 million years ago to 10,000 BCE", "5,500 years ago to 3,500 years ago", "3,500 BCE to 1,500 BCE"],
+      ans: 1,
+      exp: "The Paleolithic Age is roughly dated from about 2.5 million years ago to around 10,000 BCE, though exact dates vary by author."
+    },
+    {
+      q: "Which of the following was NOT a feature of the Paleolithic lifestyle?",
+      opts: ["Use of stone tools", "Nomadic lifestyle", "Hunting and gathering", "Domestication of animals"],
+      ans: 3,
+      exp: "Domestication of animals had not yet begun in the Paleolithic period; it began later, in the Mesolithic."
+    },
+    {
+      q: "What type of stone tools were mainly used during the Paleolithic Age?",
+      opts: ["Polished stone tools", "Metal tools", "Rough/unpolished hand axes and choppers", "Microliths only"],
       ans: 2,
-      exp: "Deccan India produced cotton in the black soil, while lower Deccan produced ragi, bajra, and several other millets."
+      exp: "Paleolithic tools were rough, unpolished hand axes and choppers made of stone and bone; polishing technology had not developed yet."
     },
     {
-      q: "Which of the following about Chalcolithic houses is INCORRECT?",
-      opts: ["Their settlements were sedentary or semi-sedentary", "They used mud bricks (rarely burnt bricks)", "They built urban civilizations with planned drainage", "Silos were found for grain storage"],
+      q: "Paleolithic tools were mainly made from which materials?",
+      opts: ["Copper and bronze", "Stone and bone", "Wood and iron", "Clay and stone"],
+      ans: 1,
+      exp: "Paleolithic tools were made from stone and bone."
+    },
+    {
+      q: "What was the first stone-age tool used by early humans?",
+      opts: ["Sickle", "Microlith", "Hammerstone", "Chopper"],
       ans: 2,
-      exp: "Chalcolithic settlements like Inamgaon, Eran, and Kayatha had fortifications and moats, but urban civilization was absent. They were essentially rural."
+      exp: "The hammerstone is considered the first stone tool used by humans."
     },
     {
-      q: "Burial practices in Chalcolithic Maharashtra placed bodies in:",
-      opts: ["North-south position under house floors", "East-west position in separate graveyards", "Urn burials in rivers", "Cremation and scattering of ashes"],
+      q: "What major climate change marked the end of the Paleolithic Age?",
+      opts: ["End of the Ice Age", "Beginning of the Ice Age", "A major flood", "Volcanic winter"],
       ans: 0,
-      exp: "In Maharashtra, Chalcolithic burials occurred under house floors in north to south position, whereas in South India, the position was east to west."
+      exp: "The end of the Pleistocene Ice Age, with gradual melting and change in topography/temperature, marked the transition out of the Paleolithic Age into the Mesolithic."
     },
     {
-      q: "Terracotta female figurines in Chalcolithic cultures indicate reverence for:",
-      opts: ["A fertility goddess", "The mother goddess", "A nature deity", "Sun worship"],
+      q: "What was the primary form of art associated with the Stone Age?",
+      opts: ["Sculpture in bronze", "Cave/rock paintings", "Woven textiles", "Pottery glazing"],
       ans: 1,
-      exp: "Terracotta female figurines found in Chalcolithic cultures indicate reverence for the mother goddess."
+      exp: "Cave paintings, such as those at Bhimbetka, are the primary form of art surviving from the Stone Age."
     },
     {
-      q: "Social inequalities in the Chalcolithic period are evidenced by:",
-      opts: ["Different sizes of houses", "Differences in burial goods for children at Chandoli and Nevasa", "Use of different metals", "Separate pottery styles for different groups"],
+      q: "Which colours were predominantly used in Stone Age cave paintings?",
+      opts: ["Blue, green, yellow", "Red, black, and white", "Purple and gold", "Only black"],
       ans: 1,
-      exp: "Graves at Chandoli and Nevasa in western Maharashtra revealed differences in burial goods for children — indicating emergence of social inequalities."
+      exp: "Red, black, and white were the predominant colours used in Stone Age cave paintings."
     },
     {
-      q: "Which is described as a key importance of the Chalcolithic phase?",
-      opts: ["First use of iron tools", "First to use painted pottery for cooking, eating, and storage", "First use of bronze weapons", "First evidence of ocean trade"],
-      ans: 1,
-      exp: "Key importance of the Chalcolithic phase: proficiency in copper smelting, first to use painted pottery for cooking/eating/storage, founded the first village in India."
+      q: "What materials were used to create the colours for Stone Age cave paintings?",
+      opts: ["Minerals, charcoal, and animal fat", "Only plant dyes", "Synthetic pigments", "Only ash"],
+      ans: 0,
+      exp: "Minerals, charcoal, and animal fat were used to prepare the paint colours."
     },
     {
-      q: "Bronze tools were practically absent in the Chalcolithic phase. This is considered a:",
-      opts: ["Importance", "Limitation", "Trade characteristic", "Cultural achievement"],
+      q: "The art of carving and engraving on bones and stones during the Stone Age is called:",
+      opts: ["Petroglyph", "Chaitya", "Vihara", "Megalith"],
+      ans: 0,
+      exp: "This form of carving/engraving art on bones and stones is called a petroglyph."
+    },
+    {
+      q: "Where are the Bhimbetka rock shelters, famous for prehistoric cave paintings, located?",
+      opts: ["Bihar", "Madhya Pradesh", "Rajasthan", "Uttar Pradesh"],
       ans: 1,
-      exp: "The practical absence of bronze tools in the Chalcolithic phase is considered a limitation of Chalcolithic cultures."
+      exp: "Bhimbetka is located in Madhya Pradesh (Raisen district, near Bhopal)."
+    },
+    {
+      q: "Who discovered the Bhimbetka rock shelters, and in which year?",
+      opts: ["Robert Bruce Foote, 1904", "V.S. Wakankar, 1957-58", "H.D. Sankalia, 1953-54", "Alexander Cunningham, 1861"],
+      ans: 1,
+      exp: "Archaeologist Dr. Vishnu Shridhar Wakankar discovered Bhimbetka in 1957-58."
+    },
+    {
+      q: "Bhimbetka is located in which district of Madhya Pradesh?",
+      opts: ["Bhopal district", "Raisen district (near Obedullaganj)", "Indore district", "Gwalior district"],
+      ans: 1,
+      exp: "Bhimbetka is located near Obedullaganj in Raisen district, in the Narmada valley, Madhya Pradesh."
+    },
+    {
+      q: "Which river valley is Bhimbetka situated in?",
+      opts: ["Ganga valley", "Narmada valley", "Yamuna valley", "Son valley"],
+      ans: 1,
+      exp: "Bhimbetka is situated in the Narmada valley."
+    },
+    {
+      q: "According to one source, Bhimbetka rock shelters are primarily classified as belonging to which period, though the paintings themselves are often attributed to the Upper Paleolithic period?",
+      opts: ["Neolithic period", "Mesolithic period", "Chalcolithic period", "Iron Age"],
+      ans: 1,
+      exp: "Sources vary: Bhimbetka is described as a Mesolithic site by discovery/occupation, though the earliest and most famous paintings are often attributed to the Upper Paleolithic period. Some sources also call it a Paleolithic site. Both classifications appear in different exam materials, so read the question carefully."
     },
 
-    // ── IRON AGE ────────────────────────────────────────────
+    // ── MESOLITHIC AGE (MIDDLE STONE AGE) ───────────────────────────
 
     {
-      q: "The Iron Age in North India is dated to:",
-      opts: ["2,000–1,500 BC", "1,500–1,200 BC", "1,100–800 BC", "800–400 BC"],
+      q: "The Mesolithic Age is also known as:",
+      opts: ["Old Stone Age", "Middle Stone Age", "New Stone Age", "Copper Age"],
+      ans: 1,
+      exp: "'Meso' is Greek for 'middle', and 'lithos' means stone — hence Middle Stone Age."
+    },
+    {
+      q: "The word 'Mesolithic' is derived from which language?",
+      opts: ["Latin", "Sanskrit", "Greek", "Persian"],
       ans: 2,
-      exp: "The Iron Age in North India is dated to 1100 to 800 BC."
+      exp: "Like 'Paleolithic', the word 'Mesolithic' comes from Greek."
     },
     {
-      q: "Painted Grey Ware pottery of the Iron Age is primarily found in which region?",
-      opts: ["Krishna-Tungabhadra valley", "Ganga-Yamuna valley", "Narmada-Tapi valley", "Brahmaputra valley"],
+      q: "Small, finely-worked stone tools that are characteristic of the Mesolithic Age are called:",
+      opts: ["Hand axes", "Microliths", "Choppers", "Chatra"],
       ans: 1,
-      exp: "Painted Grey Ware pottery is primarily found in the Ganga-Yamuna valley and is associated with early Vedic culture."
+      exp: "Microliths were the small, finely-worked stone tools characteristic of the Mesolithic period."
     },
     {
-      q: "The Iron Age Northern Black Polished Ware culture is associated with:",
-      opts: ["Chalcolithic period", "Mahajanapada and Mauryan periods", "Vedic period", "Megalithic burials"],
-      ans: 1,
-      exp: "The Northern Black Polished Ware culture, which followed the Painted Grey Ware, is associated with the Mahajanapada and Mauryan periods."
+      q: "Which animal is generally believed to have been domesticated first, during the Mesolithic Age?",
+      opts: ["Cattle", "Goat", "Dog", "Sheep"],
+      ans: 2,
+      exp: "The dog is generally believed to be the first animal domesticated, during the Mesolithic Age; pigs, sheep, goats and cattle were domesticated later."
     },
     {
-      q: "In Iron Age South India, black-ware pottery is found mainly in:",
-      opts: ["Human habitations", "Burial mounds in Tamil Nadu", "Temple complexes", "Trade routes"],
+      q: "Which feature best describes the settlements of Mesolithic people?",
+      opts: ["Fully permanent large cities", "Small, temporary settlements", "No settlements of any kind", "Multi-storeyed stone buildings"],
       ans: 1,
-      exp: "Presence of black-ware pottery mainly in burial mounds in Tamil Nadu. Black-ware pottery is NOT found in human habitations."
+      exp: "Mesolithic people began settling in small, temporary settlements — a step up from pure nomadism but not yet permanent villages."
+    },
+    {
+      q: "Which of the following was NOT a characteristic of the Mesolithic Age?",
+      opts: ["Use of microliths", "Domestication of the dog", "Large-scale agriculture", "Small temporary settlements"],
+      ans: 2,
+      exp: "Large-scale agriculture developed later, in the Neolithic Age, not the Mesolithic."
+    },
+    {
+      q: "What material, apart from stone, was often used along with stone to make tools during the Mesolithic Age?",
+      opts: ["Iron", "Wood and bone", "Bronze", "Glass"],
+      ans: 1,
+      exp: "Alongside stone, wood and bone were commonly used to make tools during the Mesolithic Age."
+    },
+    {
+      q: "Three human skeletons found in a single grave were recovered at which site?",
+      opts: ["Sarai Nahar Rai", "Damdama", "Mahadaha", "Langhnaj"],
+      ans: 1,
+      exp: "Damdama, in Pratapgarh district, Uttar Pradesh, is where three human skeletons were found buried together in a single grave — a Mesolithic site."
+    },
+    {
+      q: "Two human skeletons buried together in a single grave, indicating a 'couple burial' (Yugal Samadhi), were found at:",
+      opts: ["Damdama", "Langhnaj", "Sarai Nahar Rai", "Adamgarh"],
+      ans: 2,
+      exp: "Sarai Nahar Rai, Uttar Pradesh, yielded evidence of two human skeletons buried in one grave — considered a 'couple burial'."
+    },
+    {
+      q: "Evidence of a possible early battle/warfare, along with burial practices, has been found at:",
+      opts: ["Sarai Nahar Rai", "Bagor", "Adamgarh", "Burzahom"],
+      ans: 0,
+      exp: "Sarai Nahar Rai has yielded evidence suggestive of early conflict/battle along with burial practices."
+    },
+    {
+      q: "'Collective burial' (multiple individuals buried together) evidence has been found at:",
+      opts: ["Mahadaha", "Damdama", "Adamgarh", "Sanganakallu"],
+      ans: 0,
+      exp: "Mahadaha, Uttar Pradesh, has yielded evidence of collective/mass burial practices."
+    },
+    {
+      q: "Evidence of burial of both males and females together has been found at:",
+      opts: ["Damdama", "Mahadaha", "Langhnaj", "Sarai Nahar Rai"],
+      ans: 1,
+      exp: "Mahadaha has yielded evidence of male and female skeletons buried together."
+    },
+    {
+      q: "14 human skeletons found together in a single grave were recovered from:",
+      opts: ["Damdama, Uttar Pradesh", "Langhnaj, Gujarat", "Sarai Nahar Rai, Uttar Pradesh", "Bagor, Rajasthan"],
+      ans: 1,
+      exp: "Langhnaj, in Gujarat, is the Mesolithic site where 14 skeletons were found together in a single grave."
+    },
+    {
+      q: "Adamgarh, a Mesolithic site in the Narmadapuram district of Madhya Pradesh, provides the earliest evidence in India of:",
+      opts: ["Rice cultivation", "Animal husbandry (domestication)", "Iron smelting", "Pottery painting"],
+      ans: 1,
+      exp: "Adamgarh provides the earliest evidence of animal husbandry (pashupalan) in Indian history, and is also considered an early recreational/sports ground of prehistoric humans."
+    },
+    {
+      q: "The Sambhar Lake deposits in Rajasthan provide the earliest evidence in Indian history of:",
+      opts: ["Plantation/afforestation (tree planting)", "Iron smelting", "Wheel-based transport", "Rice domestication"],
+      ans: 0,
+      exp: "The Sambhar Lake deposits in Rajasthan provide the earliest evidence of plantation, i.e. early humans growing/planting trees."
+    },
+    {
+      q: "Evidence for the domestication of animals during the Mesolithic period has been found at which Rajasthan site?",
+      opts: ["Bagor", "Sambhar", "Langhnaj", "Adamgarh"],
+      ans: 0,
+      exp: "Bagor, in Rajasthan, provides evidence of animal domestication during the Mesolithic period (Adamgarh in Madhya Pradesh is also cited for similar evidence)."
+    },
+    {
+      q: "The sites Sarai Nahar Rai, Damdama, and Mahadaha are all located in which present-day state, and belong to which period?",
+      opts: ["Bihar; Neolithic period", "Uttar Pradesh; Mesolithic period", "Madhya Pradesh; Chalcolithic period", "Rajasthan; Paleolithic period"],
+      ans: 1,
+      exp: "All three sites are located in Uttar Pradesh and belong to the Mesolithic period."
+    },
+    {
+      q: "Bone tools/implements have been found at which of the following sites?",
+      opts: ["Chopani Mando only", "Sarai Nahar Rai and Mahadaha", "Bagor only", "Burzahom only"],
+      ans: 1,
+      exp: "Bone implements have been recovered from both Sarai Nahar Rai and Mahadaha, Mesolithic sites in Uttar Pradesh."
+    },
+    {
+      q: "According to one exam-prep source (contrary to the standard academic view that places it in the Upper Paleolithic), Homo sapiens are said to have first appeared during which period?",
+      opts: ["Lower Paleolithic", "Middle Paleolithic", "Mesolithic period", "Upper Paleolithic"],
+      ans: 2,
+      exp: "This particular source states Homo sapiens first appeared during the Mesolithic period (~12,000 years ago); note that many other sources place this in the Upper Paleolithic instead, so treat this fact with some caution."
     },
 
-    // ── MEGALITHIC SITES ────────────────────────────────────
+    // ── NEOLITHIC AGE (NEW STONE AGE) ───────────────────────────────
 
     {
-      q: "Megalithic culture represents a distinct Iron Age culture spanning approximately:",
-      opts: ["500 BCE – 100 CE", "1000 BCE – 300 CE", "2000 BCE – 500 CE", "300 BCE – 700 CE"],
-      ans: 1,
-      exp: "Megalithic culture represents a distinct Iron Age culture (c. 1000 BCE – 300 CE). It is characterised by burial monuments made of large stones (megaliths)."
-    },
-    {
-      q: "Which of the following is NOT a type of Megalithic burial architecture?",
-      opts: ["Urn burials", "Stupa burials", "Cist burials", "Dolmenoid cists"],
-      ans: 1,
-      exp: "Megalithic burial types include Urn burials, Pit burials, Cist burials, Dolmenoid cists, Cairn circles, and Stone circles. Stupa is a Buddhist structure, not a Megalithic burial type."
-    },
-    {
-      q: "Adichanallur (Tamil Nadu), a Megalithic site, is known for which type of burial?",
-      opts: ["Cist burials", "Pit burials", "Urn burials", "Stone circle burials"],
+      q: "The Neolithic Age is also known as:",
+      opts: ["Old Stone Age", "Middle Stone Age", "New Stone Age", "Iron Age"],
       ans: 2,
-      exp: "Adichanallur (Tamil Nadu) is a burial mound site known for Urn burials. Artifacts found include iron objects, gold diadems, and pottery."
+      exp: "'Neo' means new, and 'lithic' means stone — hence New Stone Age."
     },
     {
-      q: "Which Megalithic site in Karnataka is the largest megalithic site in South India?",
-      opts: ["Brahmagiri", "Hallur", "Hirebenkal", "Maski"],
-      ans: 2,
-      exp: "Hirebenkal (Karnataka) is the largest megalithic site in South India, featuring dolmenoid cists and menhirs."
-    },
-    {
-      q: "Which site was the first to mention the name 'Ashoka'?",
-      opts: ["Brahmagiri", "Sanchi", "Maski", "Hallur"],
-      ans: 2,
-      exp: "Maski (Karnataka) is notable as the first site to mention the name 'Ashoka'. Type of burials found here: Cist burials."
-    },
-    {
-      q: "Hallur (Karnataka) is significant for:",
-      opts: ["Largest megalithic site", "Early use of iron and agricultural settlements", "First mention of Ashoka", "Neolithic to Megalithic transition"],
+      q: "What was the main reason for the transition to settled life during the Neolithic Age?",
+      opts: ["Discovery of fire", "Development of agriculture", "Invention of the wheel", "Discovery of iron"],
       ans: 1,
-      exp: "Hallur (Karnataka) is significant for early use of iron and agricultural settlements. Artifacts: pottery and iron implements; type: Cist burials."
+      exp: "The development of agriculture meant people no longer needed to move constantly in search of food, enabling settled life."
     },
     {
-      q: "Which Megalithic site in Kashmir shows a Neolithic-Megalithic transition and early agriculture?",
-      opts: ["Junapani", "Gufkral", "Chandravalli", "Porkalam"],
+      q: "Which crops are considered among the earliest cultivated during the Neolithic period?",
+      opts: ["Rice and maize", "Wheat and barley", "Millet only", "Cotton and sugarcane"],
       ans: 1,
-      exp: "Gufkral (Kashmir) shows Neolithic-Megalithic transition and early agriculture. Artifacts found: stone tools, pottery. Type of burial: Pit burials."
+      exp: "Wheat and barley are considered among the earliest crops cultivated by humans during the Neolithic period."
     },
     {
-      q: "Megalithic material culture included which type of pottery predominantly?",
-      opts: ["Painted Grey Ware", "Ochre Coloured Pottery", "Black-and-Red Ware", "Northern Black Polished Ware"],
-      ans: 2,
-      exp: "Black-and-Red Ware pottery is predominant in Megalithic material culture, often polished and decorated."
-    },
-    {
-      q: "Beads of which materials found in Megalithic sites indicate trade and craft specialization?",
-      opts: ["Clay, wood and bone", "Carnelian, quartz, agate and gold ornaments", "Copper and bronze", "Faience and terracotta"],
+      q: "The earliest evidence of crop cultivation (wheat and barley) in the Indian subcontinent is found at:",
+      opts: ["Burzahom", "Mehrgarh", "Bagor", "Adamgarh"],
       ans: 1,
-      exp: "Beads of carnelian, quartz, agate, and gold ornaments found in Megalithic sites indicate trade and craft specialization."
+      exp: "Mehrgarh, in Balochistan (Pakistan), provides the earliest evidence of wheat and barley cultivation."
     },
     {
-      q: "India's earliest maritime afterlife myth, echoing boat-burial traditions worldwide, is connected with which state?",
-      opts: ["Tamil Nadu", "Andhra Pradesh", "Kerala", "Karnataka"],
+      q: "Which agricultural technique, involving clearing land by burning vegetation and moving on after some seasons, was commonly practiced in the Neolithic Age?",
+      opts: ["Crop rotation", "Slash-and-burn cultivation", "Terrace farming", "Drip irrigation"],
+      ans: 1,
+      exp: "Slash-and-burn cultivation was commonly practiced — land was cleared and farmed, then burned and abandoned for a period before returning."
+    },
+    {
+      q: "A significant advancement in tool-making during the Neolithic Age was the development of:",
+      opts: ["Iron tools", "Bronze tools", "Polished stone tools", "Copper tools"],
       ans: 2,
-      exp: "At Viyur (Kozhikode), Kerala, a boat-shaped sarcophagus shows Iron Age belief in the soul traveling by sea into the afterlife — India's earliest maritime afterlife myth."
+      exp: "The Neolithic Age saw stone tools being polished and given sharper, refined shapes."
+    },
+    {
+      q: "The invention of which tool marked the transition from hunting to agriculture in the Neolithic Age?",
+      opts: ["Hammerstone", "Sickle", "Chopper", "Hand axe"],
+      ans: 1,
+      exp: "The sickle (a tool for reaping crops) marked this transition, enabling harvesting rather than just hunting."
+    },
+    {
+      q: "Which Neolithic site, famous for evidence of pit-dwellings (underground houses), is located in Jammu & Kashmir?",
+      opts: ["Mehrgarh", "Burzahom", "Chirand", "Piklihal"],
+      ans: 1,
+      exp: "Burzahom, in Kashmir, is known for evidence of pit-dwellings (underground houses)."
+    },
+    {
+      q: "Who discovered Burzahom, and around what year?",
+      opts: ["V.S. Wakankar, 1958", "Peterson (Van der/Piterson), around 1935", "H.D. Sankalia, 1953", "K.D. Vajpayee, 1965"],
+      ans: 1,
+      exp: "Burzahom was discovered by Peterson (De Terra/Paterson, per the transcript) around 1935."
+    },
+    {
+      q: "Evidence of burying dogs alongside human bodies has been found at:",
+      opts: ["Burzahom", "Bagor", "Mehrgarh", "Adamgarh"],
+      ans: 0,
+      exp: "Burzahom, in Kashmir, provides evidence of dogs being buried along with human bodies."
+    },
+    {
+      q: "Burzahom, known for pit-dwelling evidence, is associated with which period?",
+      opts: ["Paleolithic period", "Mesolithic period", "Neolithic period", "Chalcolithic period"],
+      ans: 2,
+      exp: "Burzahom is classified as a Neolithic site."
+    },
+    {
+      q: "Which Neolithic site in Bihar (Saran district) is important for early settlement evidence?",
+      opts: ["Chirand", "Piklihal", "Utnur", "Kodekal"],
+      ans: 0,
+      exp: "Chirand, in Saran district, Bihar, is a significant Neolithic site."
+    },
+    {
+      q: "Ash mounds, associated with pastoral (cattle-herding) activity during the Neolithic period, are found at Sanganakallu in which state?",
+      opts: ["Andhra Pradesh", "Tamil Nadu", "Karnataka", "Kerala"],
+      ans: 2,
+      exp: "Sanganakallu, in the Bellary/Ballari district of Karnataka, has ash mounds linked to seasonal pastoral activity."
+    },
+    {
+      q: "Which of these Neolithic sites is located in Tamil Nadu?",
+      opts: ["Piklihal", "Paiyampalli", "Utnur", "Kodekal"],
+      ans: 1,
+      exp: "Paiyampalli is a Neolithic site located in Tamil Nadu."
+    },
+    {
+      q: "Mehrgarh, considered the oldest Neolithic site of the Indian subcontinent, is located in which region?",
+      opts: ["Sindh, Pakistan", "Balochistan, Pakistan", "Punjab, Pakistan", "Gujarat, India"],
+      ans: 1,
+      exp: "Mehrgarh is located in Balochistan, Pakistan — not Sindh, a common exam trap."
+    },
+    {
+      q: "Which of the following statements is generally true regarding Neolithic-period people?",
+      opts: ["They had no knowledge of agriculture", "They used polished stone tools, were early farming communities, and domesticated cattle, sheep and goats", "They lived exclusively in caves", "They had already discovered iron smelting"],
+      ans: 1,
+      exp: "Neolithic people used polished stone tools, were among the earliest farming communities, and domesticated animals like cattle, sheep and goats."
+    },
+    {
+      q: "The discovery of fire is generally associated with which period, NOT the Neolithic period as sometimes mistakenly assumed?",
+      opts: ["Paleolithic period", "Mesolithic period", "Chalcolithic period", "Iron Age"],
+      ans: 0,
+      exp: "Fire was already discovered and used during the Paleolithic period, well before the Neolithic Age."
+    },
+    {
+      q: "The wheel, used for both transport and pottery-making, is first associated with which period in India?",
+      opts: ["Mesolithic period", "Neolithic period", "Chalcolithic period only", "Harappan period only"],
+      ans: 1,
+      exp: "The wheel — used for transport and shaping pottery — is first associated with the Neolithic period."
+    },
+    {
+      q: "The earliest evidence of rice cultivation in the Indian subcontinent has been found at:",
+      opts: ["Mehrgarh", "Koldihwa (Kuldhiwa), in the Belan valley, Mirzapur, UP", "Burzahom", "Chirand"],
+      ans: 1,
+      exp: "Koldihwa/Kuldhiwa, in the Belan valley near Mirzapur, Uttar Pradesh, provides the earliest evidence of rice cultivation in the subcontinent."
     },
 
-    // ── POTTERY CULTURES ────────────────────────────────────
+    // ── CHALCOLITHIC AGE, MEGALITHS & POTTERY TYPES ─────────────────
 
     {
-      q: "Which pottery culture is associated with early Vedic culture (1200–600 BCE) and found at Hastinapur and Ahichchhatra?",
-      opts: ["Ochre Coloured Pottery Ware", "Black-and-Red Ware", "Painted Grey Ware (PGW)", "Northern Black Polished Ware"],
-      ans: 2,
-      exp: "Painted Grey Ware (PGW) is associated with early Vedic culture, dated 1200–600 BCE, found at Hastinapur, Ahichchhatra, Atranjikhera, and Bhagwanpura."
-    },
-    {
-      q: "Northern Black Polished Ware (NBPW) is described as a 'luxury ware' with a glossy black surface. It is associated with:",
-      opts: ["Early Stone Age settlements", "Urbanization and Mauryan period (700–200 BCE)", "Vedic sacrificial rituals", "Pre-Harappan cultures"],
+      q: "The Chalcolithic Age gets its name from the combination of which two elements?",
+      opts: ["Bronze and Iron", "Copper and Stone", "Gold and Silver", "Wood and Bone"],
       ans: 1,
-      exp: "Northern Black Polished Ware (NBPW) dated 700–200 BCE is a luxury ware associated with urbanization and the Mauryan period. Found at Pataliputra, Taxila, Sravasti, and Kaushambi."
+      exp: "'Chalco' refers to copper, and 'lithic' refers to stone — the Chalcolithic Age is the Copper-Stone Age, when both were used together."
     },
     {
-      q: "Which pottery type was found at Inamgaon and Jorwe in Maharashtra, dated 2600–1000 BCE?",
-      opts: ["Ochre Coloured Pottery Ware", "Black-and-Red Ware (Chalcolithic)", "Painted Grey Ware", "Gupta Period Pottery"],
-      ans: 1,
-      exp: "Black-and-Red Ware (Chalcolithic) dated 2600–1000 BCE is found at Madhya Pradesh and Maharashtra sites like Inamgaon and Jorwe. It is wheel-based with white linear painted designs."
-    },
-    {
-      q: "Gupta Period Pottery (300–600 CE) is characterised by:",
-      opts: ["Ochre wash and rough finish", "Glossy black surface", "Fine red ware with stamped designs and moulded decoration", "Black and buff utility pottery"],
+      q: "Roughly how long ago did the Chalcolithic period begin, according to these exam notes?",
+      opts: ["About 10,000 years ago", "About 8,000 years ago", "About 5,500 years ago", "About 2,000 years ago"],
       ans: 2,
-      exp: "Gupta Period Pottery (300–600 CE) is fine red ware with stamped designs and moulded decoration, found at Mathura, Nalanda, Ujjain, and Kaushambi."
+      exp: "The Chalcolithic period is generally dated to around 5,500 years ago in these notes."
     },
     {
-      q: "Which of the following correctly pairs a pottery culture with its timeline?",
-      opts: ["Painted Grey Ware – 700–200 BCE", "Northern Black Polished Ware – 1200–600 BCE", "Ochre Coloured Pottery Ware – 2600–1200 BCE", "Gupta Period Pottery – 200 BCE–300 CE"],
-      ans: 2,
-      exp: "Ochre Coloured Pottery Ware: 2600–1200 BCE; Painted Grey Ware: 1200–600 BCE; NBPW: 700–200 BCE; Gupta Pottery: 300–600 CE."
-    },
-    {
-      q: "India's first solar observatories were found at Nilaskal, Vibhuthihalli, and Byse. They align precisely with:",
-      opts: ["Monsoon sunrise directions", "Solstice sunrises and equinox shadows", "Lunar eclipses", "River flood directions"],
+      q: "The Ahar (Banas) culture, a Chalcolithic culture, is found in which state?",
+      opts: ["Madhya Pradesh", "Rajasthan", "Maharashtra", "Gujarat"],
       ans: 1,
-      exp: "Rows at Nilaskal, Vibhuthihalli, and Byse align precisely with solstice sunrises and equinox shadows, functioning as prehistoric solar calculators — India's earliest scientific timekeepers."
+      exp: "The Ahar (or Banas) culture is found in Rajasthan, along the Banas river."
     },
     {
-      q: "Which of the following statements about the Neolithic Revolution is CORRECT?",
-      opts: ["It led to a decline in population", "It ended the use of stone tools", "The development of agriculture led to surplus food production and rise of civilizations", "It immediately introduced iron tools"],
-      ans: 2,
-      exp: "The Neolithic Revolution: development of agriculture led to surplus food production, resulting in the rise of civilisations. Large villages came to exist along with development of pottery and building of permanent residences."
-    },
-    {
-      q: "The Middle Palaeolithic phase in India is distributed in Narmada, Godavari, Krishna, and Yamuna areas and south of:",
-      opts: ["Ganga River", "Narmada River", "Tungabhadra River and Soan River Valley", "Kaveri River"],
-      ans: 2,
-      exp: "Distribution of Middle Palaeolithic in India: Found in Narmada, Godavari, Krishna, and Yamuna areas and south of the Tungabhadra River and Soan River Valley."
-    },
-    {
-      q: "The Neolithic period cultural phase of Burzahom shows that it was contemporary to and traded with:",
-      opts: ["Megalithic culture", "Harappa civilization", "Chalcolithic cultures of Rajasthan", "Vedic civilization"],
+      q: "The Kayatha culture, a Chalcolithic culture, is associated with which city/district in Madhya Pradesh?",
+      opts: ["Bhopal", "Ujjain", "Gwalior", "Indore"],
       ans: 1,
-      exp: "Burzahom (Kashmir) people were contemporary to Harappa civilization and traded with them. Seeds of wheat, barley, common pea and lentil have been recovered from excavations there."
+      exp: "The Kayatha culture is associated with Ujjain, Madhya Pradesh."
     },
     {
-      q: "Post-extraction or fractional burial prevailed in which region during the Chalcolithic period?",
-      opts: ["Maharashtra", "West Bengal", "Andhra Pradesh", "Rajasthan"],
+      q: "The Malwa culture, a Chalcolithic culture, is associated with which region?",
+      opts: ["Eastern Madhya Pradesh", "Western Madhya Pradesh", "Coastal Gujarat", "Northern Bihar"],
       ans: 1,
-      exp: "Post-extraction or fractional burial prevailed in West Bengal during the Chalcolithic period. In Maharashtra, almost complete or extended burial was the practice."
+      exp: "The Malwa culture covers parts of the western region of Madhya Pradesh."
     },
+    {
+      q: "The Savalda and Jorwe cultures, both Chalcolithic, are found in which state?",
+      opts: ["Maharashtra", "Karnataka", "Andhra Pradesh", "Odisha"],
+      ans: 0,
+      exp: "Both the Savalda culture and Jorwe culture are found in Maharashtra."
+    },
+    {
+      q: "In the Ahar culture, pottery was typically made in which colour scheme?",
+      opts: ["Yellow with black rims", "Red and black, with white-coloured designs", "Fully unpainted grey", "Blue and green patterns"],
+      ans: 1,
+      exp: "Ahar culture pottery was red and black in colour, with designs painted on in white."
+    },
+    {
+      q: "In the Kayatha culture, what colour were the pots typically?",
+      opts: ["Chocolate-coloured", "Bright yellow", "Pure white", "Deep blue"],
+      ans: 0,
+      exp: "Kayatha culture pottery was typically chocolate-coloured."
+    },
+    {
+      q: "In the Malwa culture, what colour were the pots typically?",
+      opts: ["Chocolate-coloured", "Yellow-coloured", "Black only", "Grey only"],
+      ans: 1,
+      exp: "Malwa culture pottery had a yellowish colour."
+    },
+    {
+      q: "Navdatoli, a Chalcolithic site associated with the Malwa culture, is located in which district of Madhya Pradesh?",
+      opts: ["Khargone district", "Sagar district", "Raisen district", "Bhopal district"],
+      ans: 0,
+      exp: "Navdatoli is located in Khargone district, Madhya Pradesh."
+    },
+    {
+      q: "Who excavated Navdatoli, and around which year?",
+      opts: ["V.S. Wakankar, 1958", "H.D. Sankalia, around 1953-54", "K.D. Vajpayee, 1965", "Mortimer Wheeler, 1944"],
+      ans: 1,
+      exp: "H.D. Sankalia excavated Navdatoli around 1953-54."
+    },
+    {
+      q: "Eran (Erin), a Chalcolithic site known for evidence of the Sati practice, is located in which district of Madhya Pradesh?",
+      opts: ["Khargone district", "Sagar district", "Ujjain district", "Raisen district"],
+      ans: 1,
+      exp: "Eran is located in Sagar district, Madhya Pradesh."
+    },
+    {
+      q: "Who discovered Eran, and around which years?",
+      opts: ["H.D. Sankalia, 1953-54", "V.S. Wakankar, 1957-58", "K.D. (Krishnadutt) Vajpayee, around 1960-65", "Mortimer Wheeler, 1944-45"],
+      ans: 2,
+      exp: "K.D. (Krishnadutt) Vajpayee discovered Eran around 1960-65."
+    },
+    {
+      q: "Rann (Eran-related site), a Chalcolithic site linked to the Malwa culture, is located in which district of Madhya Pradesh?",
+      opts: ["Sagar district", "Khargone district", "Raisen district", "Indore district"],
+      ans: 0,
+      exp: "Rann is located in Sagar district, Madhya Pradesh, and belongs to the Malwa culture."
+    },
+    {
+      q: "The goddess of vegetative fertility, worshipped during the Chalcolithic period by people of the Jorwe culture in Maharashtra, was:",
+      opts: ["Shakambari Devi", "Yellamma Devi", "Renuka Devi", "Durga Devi"],
+      ans: 0,
+      exp: "Shakambari Devi was worshipped as the goddess of vegetative fertility by the Jorwe culture people in Maharashtra."
+    },
+    {
+      q: "During the Chalcolithic period in Maharashtra, how were the dead typically buried under the floor of houses?",
+      opts: ["Oriented East to West", "Oriented North to South (head to the north, feet to the south)", "Oriented South to North", "Randomly with no fixed orientation"],
+      ans: 1,
+      exp: "Bodies were buried with the head to the north and feet to the south — an orientation similar to modern Hindu burial customs described in this lecture."
+    },
+    {
+      q: "Pandu Rajar Dhibi, a Chalcolithic site, is located in which state (a common exam trap, as it is sometimes wrongly placed in Bihar)?",
+      opts: ["Bihar", "West Bengal (Bardhaman/Vardhaman district)", "Odisha", "Jharkhand"],
+      ans: 1,
+      exp: "Pandu Rajar Dhibi is located in the Bardhaman (Vardhaman) district of West Bengal, not Bihar."
+    },
+    {
+      q: "By roughly what time had the use of black-and-red pottery, first appearing in the Chalcolithic period, become widespread across most cultures/societies?",
+      opts: ["1000 BC", "3000 BC", "2000 BC (roughly the Harappan period)", "500 BC"],
+      ans: 2,
+      exp: "By around 2000 BC, roughly corresponding to the Harappan period, black-and-red pottery had become widespread."
+    },
+    {
+      q: "The widespread use of black-and-red ware and painted grey ware in India is generally taken as a sign of:",
+      opts: ["The end of the Bronze Age", "The coming of Iron technology in India", "The coming of Copper technology in India", "None of the above"],
+      ans: 1,
+      exp: "This widespread pottery use, dated to roughly 3,500 years ago, is associated with the coming of Iron technology into India."
+    },
+    {
+      q: "What was the first metal used by humans, according to this material?",
+      opts: ["Iron", "Copper", "Bronze", "Gold"],
+      ans: 1,
+      exp: "Copper was the first metal used by humans, prior to bronze and iron."
+    },
+    {
+      q: "Megaliths (large stone structures) found in India are primarily associated with:",
+      opts: ["Purely burial/funerary practices", "Only agricultural storage", "Only temple architecture", "Only irrigation systems"],
+      ans: 0,
+      exp: "Megaliths are primarily associated with burial sites — large stones marking graves."
+    },
+    {
+      q: "'Megalith' literally means:",
+      opts: ["Small stone", "Large stone", "Polished stone", "Painted stone"],
+      ans: 1,
+      exp: "'Mega' means large, and 'lith' means stone — hence 'large stone [structure]'."
+    },
+    {
+      q: "The Megalithic period in India is roughly dated to:",
+      opts: ["10,000 BC to 5,000 BC", "2,500 BC to around 100-200 AD", "500 BC to 500 AD", "1500 BC to 1000 BC"],
+      ans: 1,
+      exp: "The Megalithic period is roughly dated from around 2500 BC to about 100-200 AD."
+    },
+    {
+      q: "Megaliths of South India are mainly associated with which technological age?",
+      opts: ["Chalcolithic (copper-stone) age", "Iron Age", "Bronze Age", "Neolithic age"],
+      ans: 1,
+      exp: "South Indian megaliths are mainly associated with the Iron Age."
+    },
+    {
+      q: "The 'Ochre Coloured Pottery' (OCP) was first identified/named at:",
+      opts: ["Hastinapur", "Ahichchhatra", "Noh", "Red Fort"],
+      ans: 0,
+      exp: "Ochre Coloured Pottery gets its name from its association with Hastinapur, roughly at the end of the Later Vedic period."
+    },
+    {
+      q: "Hastinapur, the site associated with Ochre Coloured Pottery, roughly corresponds to which present-day region?",
+      opts: ["Meerut and surrounding western Uttar Pradesh/Haryana region", "Coastal Gujarat", "Central Rajasthan", "Southern Karnataka"],
+      ans: 0,
+      exp: "Hastinapur roughly corresponds to the Meerut region of western Uttar Pradesh, near the Haryana border."
+    },
+    {
+      q: "Northern Black Polished Ware (NBPW) is chiefly associated with which historical period?",
+      opts: ["Later Vedic period", "Mauryan period", "Chalcolithic period", "Neolithic period"],
+      ans: 1,
+      exp: "NBPW is chiefly associated with the Mauryan period."
+    },
+    {
+      q: "Painted Grey Ware (PGW) is chiefly associated with which period?",
+      opts: ["Post-Vedic / Later Vedic period", "Mauryan period", "Chalcolithic period", "Neolithic period"],
+      ans: 0,
+      exp: "PGW is associated with the post-Vedic/Later Vedic period, as the Vedic Age was drawing to a close."
+    },
+    {
+      q: "An Upper Paleolithic 'mother goddess' figure made of bone was recovered from which valley?",
+      opts: ["Narmada valley", "Godavari valley", "Son valley", "Belan valley"],
+      ans: 3,
+      exp: "A bone-carved mother goddess figure of the Upper Paleolithic period was found in the Belan valley."
+    },
+    {
+      q: "The Belan valley, where an Upper Paleolithic bone mother-goddess figure was found, lies in which district of Uttar Pradesh?",
+      opts: ["Sonbhadra district", "Mirzapur district", "Prayagraj district", "Varanasi district"],
+      ans: 0,
+      exp: "The Belan valley lies in Sonbhadra district, Uttar Pradesh."
+    },
+    {
+      q: "Sonbhadra, the Uttar Pradesh district through which the Belan river flows, is notable for being:",
+      opts: ["The largest district in India by area", "The only district in India touching the borders of four other states", "The northernmost district of UP", "A district with no rivers"],
+      ans: 1,
+      exp: "Sonbhadra is the only district in India that touches the borders of four other states: Bihar, Jharkhand, Madhya Pradesh, and Chhattisgarh."
+    },
+
+    // ── SOURCES OF HISTORY & FOREIGN TRAVELLERS ─────────────────────
+
+    {
+      q: "Historians use the term 'source' to refer to information obtained from which of the following?",
+      opts: ["Manuscripts, inscriptions, and archaeology", "Only oral folklore", "Only royal decrees", "Only foreign travel accounts"],
+      ans: 0,
+      exp: "Historians use 'source' broadly for information drawn from manuscripts, inscriptions, and archaeological findings."
+    },
+    {
+      q: "Besides manuscripts and inscriptions, which ancient Indian epics are also considered important sources of ancient Indian history?",
+      opts: ["Only the Puranas", "The Ramayana and the Mahabharata", "Only the Vedas", "Only the Upanishads"],
+      ans: 1,
+      exp: "The Ramayana and Mahabharata are also considered important sources of ancient Indian history, alongside manuscripts and inscriptions."
+    },
+    {
+      q: "Objects like pottery, tools, and ornaments made by humans in the past are collectively called:",
+      opts: ["Inscriptions", "Artifacts", "Monuments", "Manuscripts"],
+      ans: 1,
+      exp: "Such man-made objects from the past are collectively termed artifacts."
+    },
+    {
+      q: "The earliest inscriptions in India were written in which language?",
+      opts: ["Sanskrit", "Pali", "Prakrit", "Tamil"],
+      ans: 2,
+      exp: "The earliest inscriptions in India were written in the Prakrit language."
+    },
+    {
+      q: "Which foreign traveller is known as the 'Father of History' for writing the book 'Historica', which describes relations between India and Iran (Persia)?",
+      opts: ["Herodotus", "Ctesias", "Megasthenes", "Deimachus"],
+      ans: 0,
+      exp: "Herodotus, often called the 'Father of History', wrote 'Historica', discussing Indo-Persian relations."
+    },
+    {
+      q: "Which foreign traveller served as a royal physician at the Persian (Iranian) royal court?",
+      opts: ["Herodotus", "Ctesias", "Deimachus", "Dionysius"],
+      ans: 1,
+      exp: "Ctesias served as the royal physician at the Persian royal court."
+    },
+    {
+      q: "Deimachus, an ambassador who visited the Mauryan court, was sent by which king to whose court?",
+      opts: ["Sent by the Syrian king Antiochus, to the court of Bindusara", "Sent by Alexander, to the court of Chandragupta Maurya", "Sent by the Egyptian king, to the court of Ashoka", "Sent by Seleucus, to the court of Chandragupta Maurya"],
+      ans: 0,
+      exp: "Deimachus was an ambassador of the Syrian king Antiochus at the court of the Mauryan emperor Bindusara."
+    },
+    {
+      q: "When Deimachus visited Bindusara's court, Bindusara reportedly asked him for three things. Which of these requests was NOT fulfilled?",
+      opts: ["Wine", "Dry figs", "A sophist (philosopher)", "All three were fulfilled"],
+      ans: 2,
+      exp: "Deimachus provided wine and dried figs but declined to send a sophist/philosopher, as this was against the customs of his homeland."
+    },
+    {
+      q: "Dionysius, a Greek traveller who visited the Mauryan court, was an ambassador sent from the court of:",
+      opts: ["The Syrian king Antiochus", "The Egyptian king (Ptolemy Philadelphus)", "The Persian king", "Alexander of Macedon"],
+      ans: 1,
+      exp: "Dionysius came as an ambassador from the Egyptian king (Ptolemy Philadelphus) and visited during the reigns of both Bindusara and Ashoka."
+    },
+    {
+      q: "Megasthenes, who wrote the book 'Indica' describing the administration and society of Pataliputra, was an ambassador of:",
+      opts: ["Seleucus, at the court of Chandragupta Maurya", "Alexander, at the court of Porus", "Antiochus, at the court of Bindusara", "Ptolemy, at the court of Ashoka"],
+      ans: 0,
+      exp: "Megasthenes was sent by Seleucus as ambassador to Chandragupta Maurya's court and wrote 'Indica'."
+    },
+    {
+      q: "Who is generally credited as the first person to recognize the archaeological importance of Indus Valley Civilization sites and suggest excavation there?",
+      opts: ["Alexander Cunningham", "John Marshall", "Charles Masson", "Daya Ram Sahni"],
+      ans: 2,
+      exp: "Charles Masson is credited as the first person to recognise the significance of Indus Valley Civilization sites."
+    },
+    {
+      q: "The first excavation of Harappa, in 1921, was carried out under whose direction, and by whom on the ground?",
+      opts: ["John Marshall's direction; excavated by Daya Ram Sahni", "Alexander Cunningham's direction; excavated by Rakhaldas Banerjee", "Mortimer Wheeler's direction; excavated by Charles Masson", "John Marshall's direction; excavated by Mortimer Wheeler"],
+      ans: 0,
+      exp: "Under the overall direction of John Marshall, Daya Ram Sahni excavated Harappa in 1921."
+    },
+    {
+      q: "The first excavation of Mohenjodaro, in 1922, was carried out by whom, under whose overall direction?",
+      opts: ["Daya Ram Sahni; under Alexander Cunningham", "Rakhaldas Banerjee; under John Marshall", "Mortimer Wheeler; under Charles Masson", "Charles Masson; under John Marshall"],
+      ans: 1,
+      exp: "Rakhaldas Banerjee excavated Mohenjodaro in 1922, under the overall direction of John Marshall."
+    },
+    {
+      q: "John Marshall gave which name to a seal found at Mohenjodaro depicting a seated figure surrounded by animals?",
+      opts: ["Pashupati seal", "Unicorn seal", "Priest-King seal", "Mother Goddess seal"],
+      ans: 0,
+      exp: "John Marshall named this seal the 'Pashupati' seal, identifying the figure with Lord Shiva as Pashupati."
+    },
+    {
+      q: "Mortimer Wheeler is known for directing excavations at Harappa as well as at which South Indian megalithic site?",
+      opts: ["Brahmagiri, Karnataka", "Adichanallur, Tamil Nadu", "Nagarjunakonda, Andhra Pradesh", "Maski, Karnataka"],
+      ans: 0,
+      exp: "Mortimer Wheeler directed excavation work at Brahmagiri in Karnataka, besides his work on Harappa."
+    },
+    {
+      q: "The Bogazkoy inscription, obtained from Central Asia and dated to around 1400 BC, mentions several deities. Which of the following is NOT mentioned in it?",
+      opts: ["Indra", "Varuna", "Mitra", "Agni"],
+      ans: 3,
+      exp: "The Bogazkoy inscription mentions Indra, Varuna, Mitra, and Nasatya — but NOT Agni."
+    },
+
+    // ── ADDITIONAL ARCHAEOLOGICAL SITES & FACTS ─────────────────────
+
+    {
+      q: "The first human fossil evidence found in India came from which river valley?",
+      opts: ["Ganga valley", "Narmada valley", "Godavari valley", "Krishna valley"],
+      ans: 1,
+      exp: "The Narmada valley, specifically Hathnora, yielded South Asia's first ancient human fossil remains."
+    },
+    {
+      q: "Who discovered the ancient human fossil remains at Hathnora, in the Narmada valley?",
+      opts: ["Arun Sonakia", "H.D. Sankalia", "V.S. Wakankar", "Robert Bruce Foote"],
+      ans: 0,
+      exp: "Arun Sonakia discovered the fossil remains at Hathnora; the fossil is sometimes referred to as 'Narmada Man'."
+    },
+    {
+      q: "The Ash Mound (Rakh ka Tila), associated with a Neolithic pastoral site, is found at Sanganakallu in which district?",
+      opts: ["Bellary/Ballari district, Karnataka", "Kurnool district, Andhra Pradesh", "Chittoor district, Andhra Pradesh", "Salem district, Tamil Nadu"],
+      ans: 0,
+      exp: "Sanganakallu, with its ash mound, is located in the Bellary/Ballari district of Karnataka."
+    },
+    {
+      q: "Petroglyphs (stone engravings) spanning from the Neolithic to the Megalithic period have been found at the Mekala Benchi site of which state?",
+      opts: ["Tamil Nadu", "Karnataka", "Andhra Pradesh (Kurnool)", "Kerala"],
+      ans: 2,
+      exp: "The Mekala Benchi site, providing petroglyph evidence from the Neolithic through Megalithic periods, is located in Kurnool district, Andhra Pradesh."
+    },
+    {
+      q: "The rock shelters of the Vindhya range, from which the maximum number of ancient human skeletons in India have been found, is called:",
+      opts: ["Lekhahia", "Bhimbetka", "Chopani Mando", "Adamgarh"],
+      ans: 0,
+      exp: "Lekhahia, a rock shelter site in the Vindhya range, has yielded the largest number of ancient human skeletons — 17, per one archaeological account (J.N. Pandey)."
+    },
+    {
+      q: "Which of the following pairs of Chalcolithic sites and their (correct) locations is accurate: Ahar-Rajasthan, Navdatoli-Madhya Pradesh, and Pandu Rajar Dhibi-West Bengal?",
+      opts: ["All three pairs are correctly matched", "Only Ahar-Rajasthan is correct", "Only Navdatoli-Madhya Pradesh is correct", "None of the pairs are correct"],
+      ans: 0,
+      exp: "All three are correctly matched: Ahar is in Rajasthan, Navdatoli is in Madhya Pradesh (not Maharashtra), and Pandu Rajar Dhibi is in West Bengal (not Bihar) — common exam traps."
+    },
+    {
+      q: "Chopani Mando, a Mesolithic site, is located in which district of Uttar Pradesh?",
+      opts: ["Mirzapur", "Sonbhadra", "Prayagraj", "Varanasi"],
+      ans: 0,
+      exp: "Chopani Mando is located in Mirzapur district, Uttar Pradesh."
+    },
+    {
+      q: "Which of these is a Neolithic site located in present-day Karnataka?",
+      opts: ["Kodekal", "Chirand", "Paiyampalli", "Utnur"],
+      ans: 0,
+      exp: "Kodekal is a Neolithic site located in Karnataka (some sources debate Karnataka vs. Andhra Pradesh, but Karnataka is the more commonly cited answer)."
+    },
+    {
+      q: "Regarding the Stone-Copper (Chalcolithic) Age in India, which statement is generally considered NOT correct?",
+      opts: ["People of this age did not know the art of writing", "People lived in village settlements", "This age's cultures were older than the (Bronze Age) Indus Valley Civilization", "People made ornaments and tools of semi-precious stones like steatite, quartz, and carnelian"],
+      ans: 2,
+      exp: "This statement is incorrect because Chalcolithic cultures generally postdate/overlap the Indus Valley Civilization rather than predating it; the IVC is itself a Bronze Age civilization, and treating 'Stone-Copper' loosely as simply 'older' than it can be a flawed generalisation used as a trick option in exams."
+    }
 
   ]
 };
-
-// ============================================================
-// CHAPTER 2: INDUS VALLEY CIVILIZATION
-// ============================================================
