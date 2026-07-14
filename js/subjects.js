@@ -30,6 +30,12 @@ const SUBJECTS = [
         file: "data/ancient-history/ch04-buddhism-jainism.js",
         dataVar: "chapter_buddhism_jainism",
       },
+      {
+        id: "ch05",
+        label: "Ch 5: Mahajanapadas",
+        file: "data/ancient-history/ch05-mahajanapads.js",
+        dataVar: "chapter_mahajanapadas",
+      },
     ],
   },
 ];
