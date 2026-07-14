@@ -1,4 +1,4 @@
-window.chapter_ancient_india = {
+window.chapter_mahajanapadas = {
   subject: "Ancient History",
   chapter: "Mahajanapadas and Rise of Magadha",
   questions: [
