@@ -7,8 +7,93 @@ let state = {
   questions: [],
   current: 0,
   answered: [],   // chosen answer index after options are shuffled
-  startTime: null
+  startTime: null,
+  isReattempt: false
 };
+
+const WRONG_QUESTIONS_KEY = 'ssc-quiz-wrong-questions-v1';
+
+function getWrongQuestions() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(WRONG_QUESTIONS_KEY) || '[]');
+    return Array.isArray(saved) ? saved : [];
+  } catch (error) {
+    return [];
+  }
+}
+
+function saveWrongQuestion(question) {
+  const wrongQuestions = getWrongQuestions();
+  const alreadySaved = wrongQuestions.some(item =>
+    item.subjectId === question.sourceSubjectId &&
+    item.chapterId === question.sourceChapterId &&
+    item.questionIndex === question.sourceQuestionIndex
+  );
+
+  if (!alreadySaved) {
+    wrongQuestions.push({
+      subjectId: question.sourceSubjectId,
+      chapterId: question.sourceChapterId,
+      questionIndex: question.sourceQuestionIndex
+    });
+    localStorage.setItem(WRONG_QUESTIONS_KEY, JSON.stringify(wrongQuestions));
+  }
+
+  updateReattemptButton();
+}
+
+function clearWrongQuestions() {
+  localStorage.removeItem(WRONG_QUESTIONS_KEY);
+  updateReattemptButton();
+}
+
+function updateReattemptButton() {
+  const count = getWrongQuestions().length;
+  const button = document.getElementById('btn-reattempt');
+  if (!button) return;
+
+  button.style.display = count > 0 ? 'inline-flex' : 'none';
+  document.getElementById('reattempt-count').textContent = count;
+  document.body.classList.toggle('reattempt-available', count > 0);
+}
+
+function findSavedQuestion(savedQuestion) {
+  const subject = SUBJECTS.find(item => item.id === savedQuestion.subjectId);
+  const chapter = subject && subject.chapters.find(item => item.id === savedQuestion.chapterId);
+  const data = chapter && window[chapter.dataVar];
+  const question = data && data.questions[savedQuestion.questionIndex];
+
+  if (!subject || !chapter || !question) return null;
+
+  return {
+    ...question,
+    sourceSubjectId: subject.id,
+    sourceChapterId: chapter.id,
+    sourceQuestionIndex: savedQuestion.questionIndex
+  };
+}
+
+function startReattempt() {
+  const questions = getWrongQuestions().map(findSavedQuestion).filter(Boolean);
+  if (!questions.length) {
+    clearWrongQuestions();
+    return;
+  }
+
+  const firstSaved = getWrongQuestions()[0];
+  state.subject = SUBJECTS.find(item => item.id === firstSaved.subjectId) || SUBJECTS[0];
+  state.chapter = { id: 'reattempt', label: 'Wrong Questions' };
+  state.questions = prepareQuestions(questions);
+  state.current = 0;
+  state.answered = new Array(state.questions.length).fill(null);
+  state.startTime = Date.now();
+  state.isReattempt = true;
+
+  // This attempt starts with a clean bank. Any new mistake is saved again.
+  clearWrongQuestions();
+  renderQuestion();
+  goTo('quiz');
+}
 
 // ── OPTION RANDOMISATION ─────────────────────────────────────
 
@@ -154,11 +239,17 @@ function selectChapter(chapter) {
   state.chapter = chapter;
 
   // Randomise every question's options when the quiz starts
-  state.questions = prepareQuestions(data.questions);
+  state.questions = prepareQuestions(data.questions.map((question, questionIndex) => ({
+    ...question,
+    sourceSubjectId: state.subject.id,
+    sourceChapterId: chapter.id,
+    sourceQuestionIndex: questionIndex
+  })));
 
   state.current = 0;
   state.answered = new Array(state.questions.length).fill(null);
   state.startTime = Date.now();
+  state.isReattempt = false;
 
   renderQuestion();
   goTo('quiz');
@@ -240,6 +331,10 @@ function answer(chosenIndex) {
   const question = state.questions[state.current];
 
   state.answered[state.current] = chosenIndex;
+
+  if (chosenIndex !== question.ans) {
+    saveWrongQuestion(question);
+  }
 
   showAnswer(
     chosenIndex,
@@ -375,6 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   renderSubjects();
+  updateReattemptButton();
   goTo('subject');
 });
 
@@ -443,7 +539,7 @@ function endQuiz() {
     grade.color;
 
   document.getElementById('res-chapter').textContent =
-    state.chapter.label;
+    state.isReattempt ? 'Reattempted wrong questions' : state.chapter.label;
 
   document.getElementById('res-correct').textContent =
     correct;
@@ -469,6 +565,17 @@ function endQuiz() {
 }
 
 function retryQuiz() {
-  // Starting again reshuffles all options
+  if (state.isReattempt) {
+    state.questions = prepareQuestions(state.questions);
+    state.current = 0;
+    state.answered = new Array(state.questions.length).fill(null);
+    state.startTime = Date.now();
+    clearWrongQuestions();
+    renderQuestion();
+    goTo('quiz');
+    return;
+  }
+
+  // Starting a regular chapter again reshuffles all options.
   selectChapter(state.chapter);
 }
